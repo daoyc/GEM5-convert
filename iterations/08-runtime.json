@@ -1,0 +1,50 @@
+{
+  "type": "System",
+  "path": "system",
+  "cpu": [
+    {
+      "type": "huanjianV1Core",
+      "path": "system.cpu0",
+      "numROBEntries": 320,
+      "LQEntries": 96,
+      "SQEntries": 56,
+      "enableFetchResidentWindowReplay": true,
+      "enableTwoFetch": true,
+      "enableFetchResidentWindowProbe": false,
+      "fetchResidentWindowCount": 4,
+      "branchPred": {
+        "path": "system.cpu0.branchPred",
+        "type": "DecoupledBPUWithBTB"
+      }
+    },
+    {
+      "type": "RiscvO3CPU",
+      "path": "system.cpu1",
+      "numROBEntries": 192,
+      "LQEntries": 64,
+      "SQEntries": 48,
+      "enableFetchResidentWindowReplay": false,
+      "enableTwoFetch": true,
+      "branchPred": {
+        "path": "system.cpu1.branchPred",
+        "type": "DecoupledBPUWithBTB"
+      }
+    },
+    {
+      "type": "RiscvO3CPU",
+      "path": "system.cpu2",
+      "branchPred": {
+        "path": "system.cpu2.branchPred",
+        "type": "DecoupledBPUWithFTB"
+      }
+    }
+  ],
+  "l2_caches": [
+    {"type": "L2Cache", "path": "system.l2_caches0", "size": 1048576},
+    {"type": "L2Cache", "path": "system.l2_caches1", "size": 2097152}
+  ],
+  "mem_ctrls": [
+    {"type": "DRAMsim3", "path": "system.mem_ctrls0", "configFile": "channel0.ini"},
+    {"type": "DRAMsim3", "path": "system.mem_ctrls1", "configFile": "channel1.ini"}
+  ]
+}

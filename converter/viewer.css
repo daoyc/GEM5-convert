@@ -1,0 +1,23 @@
+#architecturePage{inset:0;margin:0;padding:0;width:100%;max-width:none;height:100%;max-height:none;border:0;background:#edf1f4}
+#architecturePage iframe{width:100%;height:100%;border:0;display:block}
+#closeArchitecture{position:absolute;right:1rem;bottom:1rem}
+#architecturePage[data-ready] #closeArchitecture{display:none}
+#map text{pointer-events:none;user-select:none}
+#map [role=button]{cursor:pointer}
+#map .node:focus,#map .edge:focus{outline:none}
+#map .node:hover .card,#map .node:focus-visible .card{stroke:#f0fbff;stroke-width:2.5}
+#map .edge:hover .wire,#map .edge:focus-visible .wire{stroke:#cceefa;stroke-width:3}
+#map .node-name{font:650 15px Inter,"Segoe UI","Microsoft YaHei",sans-serif;fill:#f2f6fb}
+#map .node-detail{font:11.5px Inter,"Segoe UI","Microsoft YaHei",sans-serif;fill:#bdcbd8}
+#map .band-label{font-size:12px;font-weight:600}
+#map .band-legend{font:10px Consolas,monospace;fill:#a0b6c4}
+#map .node[data-stream="send"] .card{fill:#423932;stroke:#ffca82;stroke-width:2}
+#map .node[data-stream="receive"] .card{fill:#22463f;stroke:#92ffe0;stroke-width:2}
+#map .edge.active .wire{stroke:#92ffe0;stroke-width:3}
+#map .edge.active .arrow-head{fill:#92ffe0}
+#map [data-relation="other"]{opacity:.25}
+#map [data-relation="up"]{--neighbor:#8bcaff}#map [data-relation="down"]{--neighbor:#ffca82}#map [data-relation="both"]{--neighbor:#e1d4fa}
+#map :is([data-relation="up"],[data-relation="down"],[data-relation="both"]) :is(.card,.wire){stroke:var(--neighbor);stroke-width:2.8}
+#map :is([data-relation="up"],[data-relation="down"]) :is(.arrow-head,.port){fill:var(--neighbor)}
+#map [data-relation="center"] .card{stroke:white;stroke-width:3}
+@media(prefers-reduced-motion:reduce){#map .flow-dot{display:none}}

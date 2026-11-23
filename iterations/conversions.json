@@ -1,0 +1,4040 @@
+{
+  "1": {
+    "GEM5-1": {
+      "declarations": 1225,
+      "declarationRelations": 2422,
+      "warnings": [
+        "映射未匹配 src/arch/riscv/tlb.cc · fault = walker->start(0, tc, translation, req, mode, false, false, 2",
+        "映射未匹配 src/arch/riscv/tlb.cc · fault = walker->start(0, tc, translation, req, mode, false, false, 2"
+      ],
+      "modules": {
+        "xiangshan.overview": {
+          "nodes": 15,
+          "edges": 24,
+          "scenarios": 4,
+          "steps": 30,
+          "coverage": 0,
+          "structure": null,
+          "statuses": []
+        },
+        "bpu": {
+          "nodes": 9,
+          "edges": 12,
+          "scenarios": 5,
+          "steps": 24,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "ftq": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 1,
+          "steps": 4,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "ifu": {
+          "nodes": 7,
+          "edges": 6,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "decode": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 2,
+          "steps": 6,
+          "coverage": 6,
+          "structure": "6 条/周期 · 译码",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "rename": {
+          "nodes": 4,
+          "edges": 3,
+          "scenarios": 1,
+          "steps": 3,
+          "coverage": 16,
+          "structure": "6 条/周期 · 重命名",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "issue": {
+          "nodes": 7,
+          "edges": 6,
+          "scenarios": 2,
+          "steps": 7,
+          "coverage": 5,
+          "structure": "HUANJIANV1Scheduler",
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "commit": {
+          "nodes": 6,
+          "edges": 5,
+          "scenarios": 2,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "lsu": {
+          "nodes": 8,
+          "edges": 9,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "mmu": {
+          "nodes": 8,
+          "edges": 14,
+          "scenarios": 4,
+          "steps": 8,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "icache": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "dcache": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "l2": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "l3": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "bus": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "mem": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        }
+      },
+      "htmlSha256": "c85423cf538e1c93a9c0a838e7f1ab20ab991a8745322a27602a4b2e94a5181d",
+      "bytes": 5063549,
+      "source": "D:\\huanjian-project\\stage-two\\GEM5-1"
+    },
+    "GEM5-2": {
+      "declarations": 1225,
+      "declarationRelations": 2423,
+      "warnings": [],
+      "modules": {
+        "xiangshan.overview": {
+          "nodes": 15,
+          "edges": 24,
+          "scenarios": 4,
+          "steps": 30,
+          "coverage": 0,
+          "structure": null,
+          "statuses": []
+        },
+        "bpu": {
+          "nodes": 9,
+          "edges": 12,
+          "scenarios": 5,
+          "steps": 24,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "ftq": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 1,
+          "steps": 4,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "ifu": {
+          "nodes": 7,
+          "edges": 6,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "decode": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 2,
+          "steps": 6,
+          "coverage": 6,
+          "structure": "6 条/周期 · 译码",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "rename": {
+          "nodes": 4,
+          "edges": 3,
+          "scenarios": 1,
+          "steps": 3,
+          "coverage": 16,
+          "structure": "6 条/周期 · 重命名",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "issue": {
+          "nodes": 7,
+          "edges": 6,
+          "scenarios": 2,
+          "steps": 7,
+          "coverage": 5,
+          "structure": "HUANJIANV1Scheduler",
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "commit": {
+          "nodes": 6,
+          "edges": 5,
+          "scenarios": 2,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "lsu": {
+          "nodes": 8,
+          "edges": 9,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "mmu": {
+          "nodes": 8,
+          "edges": 16,
+          "scenarios": 6,
+          "steps": 20,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "icache": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "dcache": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "l2": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "l3": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "bus": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "mem": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        }
+      },
+      "htmlSha256": "606ea47b9065caa8cec6f975bcd47aabecad0edb6cc88758d5761cc374a34415",
+      "bytes": 5049805,
+      "source": "D:\\codex-project\\model-convert\\zenas-dev"
+    }
+  },
+  "2": {
+    "GEM5-1": {
+      "declarations": 1225,
+      "declarationRelations": 2422,
+      "warnings": [
+        "映射未匹配 src/arch/riscv/tlb.cc · fault = walker->start(0, tc, translation, req, mode, false, false, 2",
+        "映射未匹配 src/arch/riscv/tlb.cc · fault = walker->start(0, tc, translation, req, mode, false, false, 2"
+      ],
+      "modules": {
+        "xiangshan.overview": {
+          "nodes": 15,
+          "edges": 24,
+          "scenarios": 4,
+          "steps": 30,
+          "coverage": 0,
+          "structure": null,
+          "statuses": []
+        },
+        "bpu": {
+          "nodes": 9,
+          "edges": 12,
+          "scenarios": 5,
+          "steps": 24,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "ftq": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 1,
+          "steps": 4,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "ifu": {
+          "nodes": 7,
+          "edges": 6,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "decode": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 2,
+          "steps": 6,
+          "coverage": 6,
+          "structure": "6 条/周期 · 译码",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "rename": {
+          "nodes": 4,
+          "edges": 3,
+          "scenarios": 1,
+          "steps": 3,
+          "coverage": 16,
+          "structure": "6 条/周期 · 重命名",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "issue": {
+          "nodes": 10,
+          "edges": 12,
+          "scenarios": 2,
+          "steps": 7,
+          "coverage": 11,
+          "structure": "3 个 IQ · 544 项",
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "commit": {
+          "nodes": 6,
+          "edges": 5,
+          "scenarios": 2,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "lsu": {
+          "nodes": 8,
+          "edges": 9,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "mmu": {
+          "nodes": 8,
+          "edges": 14,
+          "scenarios": 4,
+          "steps": 8,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "icache": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "dcache": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "l2": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "l3": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "bus": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "mem": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        }
+      },
+      "htmlSha256": "a2a39aec88014642817d918092b3c1a744b75eb92d5d15b1ee483fe217f56c55",
+      "bytes": 5069929,
+      "source": "D:\\huanjian-project\\stage-two\\GEM5-1"
+    },
+    "GEM5-2": {
+      "declarations": 1225,
+      "declarationRelations": 2423,
+      "warnings": [],
+      "modules": {
+        "xiangshan.overview": {
+          "nodes": 15,
+          "edges": 24,
+          "scenarios": 4,
+          "steps": 30,
+          "coverage": 0,
+          "structure": null,
+          "statuses": []
+        },
+        "bpu": {
+          "nodes": 9,
+          "edges": 12,
+          "scenarios": 5,
+          "steps": 24,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "ftq": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 1,
+          "steps": 4,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "ifu": {
+          "nodes": 7,
+          "edges": 6,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "decode": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 2,
+          "steps": 6,
+          "coverage": 6,
+          "structure": "6 条/周期 · 译码",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "rename": {
+          "nodes": 4,
+          "edges": 3,
+          "scenarios": 1,
+          "steps": 3,
+          "coverage": 16,
+          "structure": "6 条/周期 · 重命名",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "issue": {
+          "nodes": 10,
+          "edges": 12,
+          "scenarios": 2,
+          "steps": 7,
+          "coverage": 20,
+          "structure": "12 个 IQ · 272 项",
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "commit": {
+          "nodes": 6,
+          "edges": 5,
+          "scenarios": 2,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "lsu": {
+          "nodes": 8,
+          "edges": 9,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "mmu": {
+          "nodes": 8,
+          "edges": 16,
+          "scenarios": 6,
+          "steps": 20,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "icache": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "dcache": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "l2": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "l3": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "bus": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "mem": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        }
+      },
+      "htmlSha256": "6b86c1e1ba3d424dc3616a6b4439da6c260941f3b90f74c1eae2455a5bc92b71",
+      "bytes": 5064920,
+      "source": "D:\\codex-project\\model-convert\\zenas-dev"
+    }
+  },
+  "3": {
+    "GEM5-1": {
+      "declarations": 1225,
+      "declarationRelations": 2422,
+      "warnings": [
+        "映射未匹配 src/arch/riscv/tlb.cc · fault = walker->start(0, tc, translation, req, mode, false, false, 2",
+        "映射未匹配 src/arch/riscv/tlb.cc · fault = walker->start(0, tc, translation, req, mode, false, false, 2"
+      ],
+      "modules": {
+        "xiangshan.overview": {
+          "nodes": 15,
+          "edges": 24,
+          "scenarios": 4,
+          "steps": 30,
+          "coverage": 0,
+          "structure": null,
+          "statuses": []
+        },
+        "bpu": {
+          "nodes": 9,
+          "edges": 12,
+          "scenarios": 5,
+          "steps": 24,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "ftq": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 1,
+          "steps": 4,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "ifu": {
+          "nodes": 7,
+          "edges": 6,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "decode": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 2,
+          "steps": 6,
+          "coverage": 6,
+          "structure": "6 条/周期 · 译码",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "rename": {
+          "nodes": 4,
+          "edges": 3,
+          "scenarios": 1,
+          "steps": 3,
+          "coverage": 16,
+          "structure": "6 条/周期 · 重命名",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "issue": {
+          "nodes": 13,
+          "edges": 19,
+          "scenarios": 2,
+          "steps": 7,
+          "coverage": 64,
+          "structure": "3 个 IQ · 544 项 · 23 个出口",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知"
+          ]
+        },
+        "commit": {
+          "nodes": 6,
+          "edges": 5,
+          "scenarios": 2,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "lsu": {
+          "nodes": 8,
+          "edges": 9,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "mmu": {
+          "nodes": 8,
+          "edges": 14,
+          "scenarios": 4,
+          "steps": 8,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "icache": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "dcache": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "l2": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "l3": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "bus": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "mem": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        }
+      },
+      "htmlSha256": "651f84a8b4eec0b801e3de05943feab36dc78de6ff4a77ef8e5fb7ff5c3ffcfe",
+      "bytes": 5120297,
+      "source": "D:\\huanjian-project\\stage-two\\GEM5-1"
+    },
+    "GEM5-2": {
+      "declarations": 1225,
+      "declarationRelations": 2423,
+      "warnings": [],
+      "modules": {
+        "xiangshan.overview": {
+          "nodes": 15,
+          "edges": 24,
+          "scenarios": 4,
+          "steps": 30,
+          "coverage": 0,
+          "structure": null,
+          "statuses": []
+        },
+        "bpu": {
+          "nodes": 9,
+          "edges": 12,
+          "scenarios": 5,
+          "steps": 24,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "ftq": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 1,
+          "steps": 4,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "ifu": {
+          "nodes": 7,
+          "edges": 6,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "decode": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 2,
+          "steps": 6,
+          "coverage": 6,
+          "structure": "6 条/周期 · 译码",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "rename": {
+          "nodes": 4,
+          "edges": 3,
+          "scenarios": 1,
+          "steps": 3,
+          "coverage": 16,
+          "structure": "6 条/周期 · 重命名",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "issue": {
+          "nodes": 13,
+          "edges": 19,
+          "scenarios": 2,
+          "steps": 7,
+          "coverage": 79,
+          "structure": "12 个 IQ · 272 项 · 19 个出口",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知"
+          ]
+        },
+        "commit": {
+          "nodes": 6,
+          "edges": 5,
+          "scenarios": 2,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "lsu": {
+          "nodes": 8,
+          "edges": 9,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "mmu": {
+          "nodes": 8,
+          "edges": 16,
+          "scenarios": 6,
+          "steps": 20,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "icache": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "dcache": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "l2": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "l3": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "bus": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "mem": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        }
+      },
+      "htmlSha256": "023f90b6fb0c1dd6115993d0a70a94e3d68a67db518161927c6d2423b84d8e6f",
+      "bytes": 5128999,
+      "source": "D:\\codex-project\\model-convert\\zenas-dev"
+    }
+  },
+  "4": {
+    "GEM5-1": {
+      "declarations": 1225,
+      "declarationRelations": 2422,
+      "warnings": [
+        "映射未匹配 src/arch/riscv/tlb.cc · fault = walker->start(0, tc, translation, req, mode, false, false, 2",
+        "映射未匹配 src/arch/riscv/tlb.cc · fault = walker->start(0, tc, translation, req, mode, false, false, 2"
+      ],
+      "modules": {
+        "xiangshan.overview": {
+          "nodes": 15,
+          "edges": 24,
+          "scenarios": 4,
+          "steps": 30,
+          "coverage": 0,
+          "structure": null,
+          "statuses": []
+        },
+        "bpu": {
+          "nodes": 11,
+          "edges": 16,
+          "scenarios": 5,
+          "steps": 24,
+          "coverage": 21,
+          "structure": "FTB · 6 个注册组件",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ftq": {
+          "nodes": 8,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 10,
+          "coverage": 11,
+          "structure": "FTQ 128 项 · FSQ 64 项",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ifu": {
+          "nodes": 7,
+          "edges": 6,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "decode": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 2,
+          "steps": 6,
+          "coverage": 6,
+          "structure": "6 条/周期 · 译码",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "rename": {
+          "nodes": 4,
+          "edges": 3,
+          "scenarios": 1,
+          "steps": 3,
+          "coverage": 16,
+          "structure": "6 条/周期 · 重命名",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "issue": {
+          "nodes": 13,
+          "edges": 19,
+          "scenarios": 2,
+          "steps": 7,
+          "coverage": 64,
+          "structure": "3 个 IQ · 544 项 · 23 个出口",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知"
+          ]
+        },
+        "commit": {
+          "nodes": 6,
+          "edges": 5,
+          "scenarios": 2,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "lsu": {
+          "nodes": 8,
+          "edges": 9,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "mmu": {
+          "nodes": 8,
+          "edges": 14,
+          "scenarios": 4,
+          "steps": 8,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "icache": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "dcache": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "l2": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "l3": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "bus": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "mem": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        }
+      },
+      "htmlSha256": "e24ab5889238b24f40e62de592ac8e9aa8139b73f61adff43f40814240aec39b",
+      "bytes": 5133038,
+      "source": "D:\\huanjian-project\\stage-two\\GEM5-1"
+    },
+    "GEM5-2": {
+      "declarations": 1225,
+      "declarationRelations": 2423,
+      "warnings": [],
+      "modules": {
+        "xiangshan.overview": {
+          "nodes": 15,
+          "edges": 24,
+          "scenarios": 4,
+          "steps": 30,
+          "coverage": 0,
+          "structure": null,
+          "statuses": []
+        },
+        "bpu": {
+          "nodes": 11,
+          "edges": 16,
+          "scenarios": 5,
+          "steps": 24,
+          "coverage": 19,
+          "structure": "FTB · 6 个注册组件",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ftq": {
+          "nodes": 8,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 10,
+          "coverage": 11,
+          "structure": "FTQ 128 项 · FSQ 64 项",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ifu": {
+          "nodes": 7,
+          "edges": 6,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "decode": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 2,
+          "steps": 6,
+          "coverage": 6,
+          "structure": "6 条/周期 · 译码",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "rename": {
+          "nodes": 4,
+          "edges": 3,
+          "scenarios": 1,
+          "steps": 3,
+          "coverage": 16,
+          "structure": "6 条/周期 · 重命名",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "issue": {
+          "nodes": 13,
+          "edges": 19,
+          "scenarios": 2,
+          "steps": 7,
+          "coverage": 79,
+          "structure": "12 个 IQ · 272 项 · 19 个出口",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知"
+          ]
+        },
+        "commit": {
+          "nodes": 6,
+          "edges": 5,
+          "scenarios": 2,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "lsu": {
+          "nodes": 8,
+          "edges": 9,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "mmu": {
+          "nodes": 8,
+          "edges": 16,
+          "scenarios": 6,
+          "steps": 20,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "icache": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "dcache": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "l2": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "l3": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "bus": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "mem": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        }
+      },
+      "htmlSha256": "00761419b3ff91244570d8ddf6dea1421411fbd74d8e5be0505fc7125be622d8",
+      "bytes": 5140960,
+      "source": "D:\\codex-project\\model-convert\\zenas-dev"
+    }
+  },
+  "5": {
+    "GEM5-1": {
+      "declarations": 1225,
+      "declarationRelations": 2422,
+      "warnings": [],
+      "modules": {
+        "xiangshan.overview": {
+          "nodes": 15,
+          "edges": 24,
+          "scenarios": 4,
+          "steps": 30,
+          "coverage": 0,
+          "structure": null,
+          "statuses": []
+        },
+        "bpu": {
+          "nodes": 11,
+          "edges": 16,
+          "scenarios": 5,
+          "steps": 24,
+          "coverage": 21,
+          "structure": "FTB · 6 个注册组件",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ftq": {
+          "nodes": 8,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 10,
+          "coverage": 11,
+          "structure": "FTQ 128 项 · FSQ 64 项",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ifu": {
+          "nodes": 7,
+          "edges": 6,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "decode": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 2,
+          "steps": 6,
+          "coverage": 6,
+          "structure": "6 条/周期 · 译码",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "rename": {
+          "nodes": 4,
+          "edges": 3,
+          "scenarios": 1,
+          "steps": 3,
+          "coverage": 16,
+          "structure": "6 条/周期 · 重命名",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "issue": {
+          "nodes": 13,
+          "edges": 19,
+          "scenarios": 2,
+          "steps": 7,
+          "coverage": 64,
+          "structure": "3 个 IQ · 544 项 · 23 个出口",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知"
+          ]
+        },
+        "commit": {
+          "nodes": 6,
+          "edges": 5,
+          "scenarios": 2,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "lsu": {
+          "nodes": 8,
+          "edges": 9,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "mmu": {
+          "nodes": 9,
+          "edges": 19,
+          "scenarios": 8,
+          "steps": 34,
+          "coverage": 12,
+          "structure": "双侧 Walker · 动态 root_level",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "icache": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "dcache": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "l2": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "l3": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "bus": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "mem": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        }
+      },
+      "htmlSha256": "4ab455baf889607a0c3a878697e50b50bc0826a04e673380a48821fc99e1615d",
+      "bytes": 5142610,
+      "source": "D:\\huanjian-project\\stage-two\\GEM5-1"
+    },
+    "GEM5-2": {
+      "declarations": 1225,
+      "declarationRelations": 2423,
+      "warnings": [],
+      "modules": {
+        "xiangshan.overview": {
+          "nodes": 15,
+          "edges": 24,
+          "scenarios": 4,
+          "steps": 30,
+          "coverage": 0,
+          "structure": null,
+          "statuses": []
+        },
+        "bpu": {
+          "nodes": 11,
+          "edges": 16,
+          "scenarios": 5,
+          "steps": 24,
+          "coverage": 19,
+          "structure": "FTB · 6 个注册组件",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ftq": {
+          "nodes": 8,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 10,
+          "coverage": 11,
+          "structure": "FTQ 128 项 · FSQ 64 项",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ifu": {
+          "nodes": 7,
+          "edges": 6,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "decode": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 2,
+          "steps": 6,
+          "coverage": 6,
+          "structure": "6 条/周期 · 译码",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "rename": {
+          "nodes": 4,
+          "edges": 3,
+          "scenarios": 1,
+          "steps": 3,
+          "coverage": 16,
+          "structure": "6 条/周期 · 重命名",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "issue": {
+          "nodes": 13,
+          "edges": 19,
+          "scenarios": 2,
+          "steps": 7,
+          "coverage": 79,
+          "structure": "12 个 IQ · 272 项 · 19 个出口",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知"
+          ]
+        },
+        "commit": {
+          "nodes": 6,
+          "edges": 5,
+          "scenarios": 2,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "lsu": {
+          "nodes": 8,
+          "edges": 9,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "mmu": {
+          "nodes": 9,
+          "edges": 19,
+          "scenarios": 8,
+          "steps": 34,
+          "coverage": 11,
+          "structure": "双侧 Walker · SV48/SV39 分支",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "icache": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "dcache": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "l2": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "l3": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "bus": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "mem": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        }
+      },
+      "htmlSha256": "bc511cc2b0cbdd0d2e4588c6ca43fa9a095c064b8ac79d2c2fe45193115f6e53",
+      "bytes": 5146959,
+      "source": "D:\\codex-project\\model-convert\\zenas-dev"
+    }
+  },
+  "6": {
+    "GEM5-1": {
+      "declarations": 1225,
+      "declarationRelations": 2422,
+      "warnings": [],
+      "modules": {
+        "xiangshan.overview": {
+          "nodes": 15,
+          "edges": 27,
+          "scenarios": 5,
+          "steps": 33,
+          "coverage": 0,
+          "structure": null,
+          "statuses": []
+        },
+        "bpu": {
+          "nodes": 11,
+          "edges": 16,
+          "scenarios": 5,
+          "steps": 24,
+          "coverage": 21,
+          "structure": "FTB · 6 个注册组件",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ftq": {
+          "nodes": 8,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 10,
+          "coverage": 11,
+          "structure": "FTQ 128 项 · FSQ 64 项",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ifu": {
+          "nodes": 7,
+          "edges": 6,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "decode": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 2,
+          "steps": 6,
+          "coverage": 6,
+          "structure": "6 条/周期 · 译码",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "rename": {
+          "nodes": 4,
+          "edges": 3,
+          "scenarios": 1,
+          "steps": 3,
+          "coverage": 16,
+          "structure": "6 条/周期 · 重命名",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "issue": {
+          "nodes": 13,
+          "edges": 19,
+          "scenarios": 2,
+          "steps": 7,
+          "coverage": 67,
+          "structure": "3 个 IQ · 544 项 · 23 个出口",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "commit": {
+          "nodes": 15,
+          "edges": 14,
+          "scenarios": 4,
+          "steps": 16,
+          "coverage": 12,
+          "structure": "ROB · 分支恢复 / 精确异常 / LVP 失配",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "lsu": {
+          "nodes": 8,
+          "edges": 9,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 10,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "mmu": {
+          "nodes": 9,
+          "edges": 19,
+          "scenarios": 8,
+          "steps": 34,
+          "coverage": 12,
+          "structure": "双侧 Walker · 动态 root_level",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "icache": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "dcache": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "l2": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "l3": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "bus": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "mem": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        }
+      },
+      "htmlSha256": "0ea9dd7d5bb77ceb476f7b8e806c68ffcae2762b06113cd9b776024552365c2c",
+      "bytes": 5160460,
+      "source": "D:\\huanjian-project\\stage-two\\GEM5-1"
+    },
+    "GEM5-2": {
+      "declarations": 1225,
+      "declarationRelations": 2423,
+      "warnings": [],
+      "modules": {
+        "xiangshan.overview": {
+          "nodes": 15,
+          "edges": 27,
+          "scenarios": 5,
+          "steps": 33,
+          "coverage": 0,
+          "structure": null,
+          "statuses": []
+        },
+        "bpu": {
+          "nodes": 11,
+          "edges": 16,
+          "scenarios": 5,
+          "steps": 24,
+          "coverage": 19,
+          "structure": "FTB · 6 个注册组件",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ftq": {
+          "nodes": 8,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 10,
+          "coverage": 11,
+          "structure": "FTQ 128 项 · FSQ 64 项",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ifu": {
+          "nodes": 7,
+          "edges": 6,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "decode": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 2,
+          "steps": 6,
+          "coverage": 6,
+          "structure": "6 条/周期 · 译码",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "rename": {
+          "nodes": 4,
+          "edges": 3,
+          "scenarios": 1,
+          "steps": 3,
+          "coverage": 16,
+          "structure": "6 条/周期 · 重命名",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "issue": {
+          "nodes": 13,
+          "edges": 19,
+          "scenarios": 2,
+          "steps": 7,
+          "coverage": 82,
+          "structure": "12 个 IQ · 272 项 · 19 个出口",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "commit": {
+          "nodes": 15,
+          "edges": 14,
+          "scenarios": 4,
+          "steps": 16,
+          "coverage": 11,
+          "structure": "ROB · 分支恢复 / 精确异常",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "lsu": {
+          "nodes": 8,
+          "edges": 9,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 10,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "mmu": {
+          "nodes": 9,
+          "edges": 19,
+          "scenarios": 8,
+          "steps": 34,
+          "coverage": 11,
+          "structure": "双侧 Walker · SV48/SV39 分支",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "icache": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "dcache": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "l2": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "l3": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "bus": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "mem": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        }
+      },
+      "htmlSha256": "2ccd99722993a1fb35a35a5043ae1e892569c5f62733429daafc4d4abdbfffd5",
+      "bytes": 5164036,
+      "source": "D:\\codex-project\\model-convert\\zenas-dev"
+    }
+  },
+  "7": {
+    "GEM5-1": {
+      "declarations": 1225,
+      "declarationRelations": 2422,
+      "warnings": [],
+      "modules": {
+        "xiangshan.overview": {
+          "nodes": 15,
+          "edges": 27,
+          "scenarios": 5,
+          "steps": 33,
+          "coverage": 0,
+          "structure": null,
+          "statuses": []
+        },
+        "bpu": {
+          "nodes": 11,
+          "edges": 16,
+          "scenarios": 5,
+          "steps": 24,
+          "coverage": 21,
+          "structure": "FTB · 6 个注册组件",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ftq": {
+          "nodes": 8,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 10,
+          "coverage": 11,
+          "structure": "FTQ 128 项 · FSQ 64 项",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ifu": {
+          "nodes": 7,
+          "edges": 6,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "decode": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 2,
+          "steps": 6,
+          "coverage": 6,
+          "structure": "6 条/周期 · 译码",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "rename": {
+          "nodes": 4,
+          "edges": 3,
+          "scenarios": 1,
+          "steps": 3,
+          "coverage": 16,
+          "structure": "6 条/周期 · 重命名",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "issue": {
+          "nodes": 13,
+          "edges": 19,
+          "scenarios": 2,
+          "steps": 7,
+          "coverage": 67,
+          "structure": "3 个 IQ · 544 项 · 23 个出口",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "commit": {
+          "nodes": 15,
+          "edges": 14,
+          "scenarios": 4,
+          "steps": 16,
+          "coverage": 14,
+          "structure": "ROB · 分支恢复 / 精确异常 / LVP 失配",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "lsu": {
+          "nodes": 9,
+          "edges": 10,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 22,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "mmu": {
+          "nodes": 9,
+          "edges": 19,
+          "scenarios": 8,
+          "steps": 34,
+          "coverage": 12,
+          "structure": "双侧 Walker · 动态 root_level",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "icache": {
+          "nodes": 7,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 13,
+          "coverage": 7,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "dcache": {
+          "nodes": 7,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 13,
+          "coverage": 10,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "l2": {
+          "nodes": 9,
+          "edges": 13,
+          "scenarios": 5,
+          "steps": 19,
+          "coverage": 9,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "l3": {
+          "nodes": 7,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 13,
+          "coverage": 8,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "bus": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 6,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "mem": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 5,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        }
+      },
+      "htmlSha256": "177ac2a5a0df5fc311d7b44b7574935b5f22186a5c3f176a60e85c1253a35ea6",
+      "bytes": 5194694,
+      "source": "D:\\huanjian-project\\stage-two\\GEM5-1"
+    },
+    "GEM5-2": {
+      "declarations": 1225,
+      "declarationRelations": 2423,
+      "warnings": [],
+      "modules": {
+        "xiangshan.overview": {
+          "nodes": 15,
+          "edges": 27,
+          "scenarios": 5,
+          "steps": 33,
+          "coverage": 0,
+          "structure": null,
+          "statuses": []
+        },
+        "bpu": {
+          "nodes": 11,
+          "edges": 16,
+          "scenarios": 5,
+          "steps": 24,
+          "coverage": 19,
+          "structure": "FTB · 6 个注册组件",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ftq": {
+          "nodes": 8,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 10,
+          "coverage": 11,
+          "structure": "FTQ 128 项 · FSQ 64 项",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ifu": {
+          "nodes": 7,
+          "edges": 6,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 3,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射"
+          ]
+        },
+        "decode": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 2,
+          "steps": 6,
+          "coverage": 6,
+          "structure": "6 条/周期 · 译码",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "rename": {
+          "nodes": 4,
+          "edges": 3,
+          "scenarios": 1,
+          "steps": 3,
+          "coverage": 16,
+          "structure": "6 条/周期 · 重命名",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "issue": {
+          "nodes": 13,
+          "edges": 19,
+          "scenarios": 2,
+          "steps": 7,
+          "coverage": 82,
+          "structure": "12 个 IQ · 272 项 · 19 个出口",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "commit": {
+          "nodes": 15,
+          "edges": 14,
+          "scenarios": 4,
+          "steps": 16,
+          "coverage": 13,
+          "structure": "ROB · 分支恢复 / 精确异常",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "lsu": {
+          "nodes": 9,
+          "edges": 10,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 22,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "mmu": {
+          "nodes": 9,
+          "edges": 19,
+          "scenarios": 8,
+          "steps": 34,
+          "coverage": 11,
+          "structure": "双侧 Walker · SV48/SV39 分支",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "icache": {
+          "nodes": 7,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 13,
+          "coverage": 7,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "dcache": {
+          "nodes": 7,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 13,
+          "coverage": 10,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "l2": {
+          "nodes": 9,
+          "edges": 13,
+          "scenarios": 5,
+          "steps": 19,
+          "coverage": 9,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "l3": {
+          "nodes": 7,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 13,
+          "coverage": 7,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "bus": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 6,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "mem": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 5,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        }
+      },
+      "htmlSha256": "37f75ca62e02ec4e8e672d44534ae050622f86a7138679755d48c89f2e258553",
+      "bytes": 5197790,
+      "source": "D:\\codex-project\\model-convert\\zenas-dev"
+    }
+  },
+  "8": {
+    "GEM5-1": {
+      "declarations": 1225,
+      "declarationRelations": 2422,
+      "warnings": [],
+      "modules": {
+        "xiangshan.overview": {
+          "nodes": 15,
+          "edges": 27,
+          "scenarios": 5,
+          "steps": 33,
+          "coverage": 0,
+          "structure": null,
+          "statuses": []
+        },
+        "bpu": {
+          "nodes": 11,
+          "edges": 16,
+          "scenarios": 5,
+          "steps": 24,
+          "coverage": 21,
+          "structure": "FTB · 6 个注册组件",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ftq": {
+          "nodes": 8,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 10,
+          "coverage": 11,
+          "structure": "FTQ 128 项 · FSQ 64 项",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ifu": {
+          "nodes": 10,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 11,
+          "coverage": 14,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "decode": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 2,
+          "steps": 6,
+          "coverage": 6,
+          "structure": "6 条/周期 · 译码",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "rename": {
+          "nodes": 4,
+          "edges": 3,
+          "scenarios": 1,
+          "steps": 3,
+          "coverage": 16,
+          "structure": "6 条/周期 · 重命名",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "issue": {
+          "nodes": 13,
+          "edges": 19,
+          "scenarios": 2,
+          "steps": 7,
+          "coverage": 67,
+          "structure": "3 个 IQ · 544 项 · 23 个出口",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "commit": {
+          "nodes": 15,
+          "edges": 14,
+          "scenarios": 4,
+          "steps": 16,
+          "coverage": 14,
+          "structure": "ROB · 分支恢复 / 精确异常 / LVP 失配",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "lsu": {
+          "nodes": 9,
+          "edges": 10,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 22,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "mmu": {
+          "nodes": 9,
+          "edges": 19,
+          "scenarios": 8,
+          "steps": 34,
+          "coverage": 12,
+          "structure": "双侧 Walker · 动态 root_level",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "icache": {
+          "nodes": 7,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 13,
+          "coverage": 7,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "dcache": {
+          "nodes": 7,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 13,
+          "coverage": 10,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "l2": {
+          "nodes": 9,
+          "edges": 13,
+          "scenarios": 5,
+          "steps": 19,
+          "coverage": 9,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "l3": {
+          "nodes": 7,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 13,
+          "coverage": 8,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "bus": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 6,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "mem": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 5,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        }
+      },
+      "htmlSha256": "da3751028698d470131307160bcc35d61707167e14cf479591297194fe5123c9",
+      "bytes": 5210135,
+      "source": "D:\\huanjian-project\\stage-two\\GEM5-1"
+    },
+    "GEM5-2": {
+      "declarations": 1225,
+      "declarationRelations": 2423,
+      "warnings": [],
+      "modules": {
+        "xiangshan.overview": {
+          "nodes": 15,
+          "edges": 27,
+          "scenarios": 5,
+          "steps": 33,
+          "coverage": 0,
+          "structure": null,
+          "statuses": []
+        },
+        "bpu": {
+          "nodes": 11,
+          "edges": 16,
+          "scenarios": 5,
+          "steps": 24,
+          "coverage": 19,
+          "structure": "FTB · 6 个注册组件",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ftq": {
+          "nodes": 8,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 10,
+          "coverage": 11,
+          "structure": "FTQ 128 项 · FSQ 64 项",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ifu": {
+          "nodes": 7,
+          "edges": 6,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 4,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射",
+            "缺失"
+          ]
+        },
+        "decode": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 2,
+          "steps": 6,
+          "coverage": 6,
+          "structure": "6 条/周期 · 译码",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "rename": {
+          "nodes": 4,
+          "edges": 3,
+          "scenarios": 1,
+          "steps": 3,
+          "coverage": 16,
+          "structure": "6 条/周期 · 重命名",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "issue": {
+          "nodes": 13,
+          "edges": 19,
+          "scenarios": 2,
+          "steps": 7,
+          "coverage": 82,
+          "structure": "12 个 IQ · 272 项 · 19 个出口",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "commit": {
+          "nodes": 15,
+          "edges": 14,
+          "scenarios": 4,
+          "steps": 16,
+          "coverage": 13,
+          "structure": "ROB · 分支恢复 / 精确异常",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "lsu": {
+          "nodes": 9,
+          "edges": 10,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 22,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "mmu": {
+          "nodes": 9,
+          "edges": 19,
+          "scenarios": 8,
+          "steps": 34,
+          "coverage": 11,
+          "structure": "双侧 Walker · SV48/SV39 分支",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "icache": {
+          "nodes": 7,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 13,
+          "coverage": 7,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "dcache": {
+          "nodes": 7,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 13,
+          "coverage": 10,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "l2": {
+          "nodes": 9,
+          "edges": 13,
+          "scenarios": 5,
+          "steps": 19,
+          "coverage": 9,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "l3": {
+          "nodes": 7,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 13,
+          "coverage": 7,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "bus": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 6,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "mem": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 5,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        }
+      },
+      "htmlSha256": "967e6bebd7b3c2a78868adcc62977e574c4c4c86f6e0a94e7a212752c39d9710",
+      "bytes": 5198110,
+      "source": "D:\\codex-project\\model-convert\\zenas-dev"
+    }
+  },
+  "9": {
+    "GEM5-1": {
+      "declarations": 1225,
+      "declarationRelations": 2422,
+      "warnings": [],
+      "modules": {
+        "xiangshan.overview": {
+          "nodes": 15,
+          "edges": 27,
+          "scenarios": 5,
+          "steps": 33,
+          "coverage": 0,
+          "structure": null,
+          "statuses": []
+        },
+        "bpu": {
+          "nodes": 11,
+          "edges": 16,
+          "scenarios": 5,
+          "steps": 24,
+          "coverage": 21,
+          "structure": "FTB · 6 个注册组件",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ftq": {
+          "nodes": 8,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 10,
+          "coverage": 11,
+          "structure": "FTQ 128 项 · FSQ 64 项",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ifu": {
+          "nodes": 10,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 11,
+          "coverage": 14,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "decode": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 2,
+          "steps": 6,
+          "coverage": 6,
+          "structure": "6 条/周期 · 译码",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "rename": {
+          "nodes": 4,
+          "edges": 3,
+          "scenarios": 1,
+          "steps": 3,
+          "coverage": 16,
+          "structure": "6 条/周期 · 重命名",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "issue": {
+          "nodes": 13,
+          "edges": 19,
+          "scenarios": 9,
+          "steps": 21,
+          "coverage": 67,
+          "structure": "3 个 IQ · 544 项 · 23 个出口",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "commit": {
+          "nodes": 15,
+          "edges": 14,
+          "scenarios": 4,
+          "steps": 16,
+          "coverage": 14,
+          "structure": "ROB · 分支恢复 / 精确异常 / LVP 失配",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "lsu": {
+          "nodes": 9,
+          "edges": 10,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 22,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "mmu": {
+          "nodes": 9,
+          "edges": 19,
+          "scenarios": 8,
+          "steps": 34,
+          "coverage": 12,
+          "structure": "双侧 Walker · 动态 root_level",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "icache": {
+          "nodes": 7,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 13,
+          "coverage": 7,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "dcache": {
+          "nodes": 7,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 13,
+          "coverage": 10,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "l2": {
+          "nodes": 9,
+          "edges": 13,
+          "scenarios": 5,
+          "steps": 19,
+          "coverage": 9,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "l3": {
+          "nodes": 7,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 13,
+          "coverage": 8,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "bus": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 6,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "mem": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 5,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        }
+      },
+      "htmlSha256": "e695e53d77021985696028bc704fcdc9907f3c570660993157754dec5524b756",
+      "bytes": 5254419,
+      "source": "D:\\huanjian-project\\stage-two\\GEM5-1"
+    },
+    "GEM5-2": {
+      "declarations": 1225,
+      "declarationRelations": 2423,
+      "warnings": [],
+      "modules": {
+        "xiangshan.overview": {
+          "nodes": 15,
+          "edges": 27,
+          "scenarios": 5,
+          "steps": 33,
+          "coverage": 0,
+          "structure": null,
+          "statuses": []
+        },
+        "bpu": {
+          "nodes": 11,
+          "edges": 16,
+          "scenarios": 5,
+          "steps": 24,
+          "coverage": 19,
+          "structure": "FTB · 6 个注册组件",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ftq": {
+          "nodes": 8,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 10,
+          "coverage": 11,
+          "structure": "FTQ 128 项 · FSQ 64 项",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ifu": {
+          "nodes": 7,
+          "edges": 6,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 4,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射",
+            "缺失"
+          ]
+        },
+        "decode": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 2,
+          "steps": 6,
+          "coverage": 6,
+          "structure": "6 条/周期 · 译码",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "rename": {
+          "nodes": 4,
+          "edges": 3,
+          "scenarios": 1,
+          "steps": 3,
+          "coverage": 16,
+          "structure": "6 条/周期 · 重命名",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "issue": {
+          "nodes": 13,
+          "edges": 19,
+          "scenarios": 9,
+          "steps": 21,
+          "coverage": 82,
+          "structure": "12 个 IQ · 272 项 · 19 个出口",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "commit": {
+          "nodes": 15,
+          "edges": 14,
+          "scenarios": 4,
+          "steps": 16,
+          "coverage": 13,
+          "structure": "ROB · 分支恢复 / 精确异常",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "lsu": {
+          "nodes": 9,
+          "edges": 10,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 22,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "mmu": {
+          "nodes": 9,
+          "edges": 19,
+          "scenarios": 8,
+          "steps": 34,
+          "coverage": 11,
+          "structure": "双侧 Walker · SV48/SV39 分支",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "icache": {
+          "nodes": 7,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 13,
+          "coverage": 7,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "dcache": {
+          "nodes": 7,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 13,
+          "coverage": 10,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "l2": {
+          "nodes": 9,
+          "edges": 13,
+          "scenarios": 5,
+          "steps": 19,
+          "coverage": 9,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "l3": {
+          "nodes": 7,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 13,
+          "coverage": 7,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "bus": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 6,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "mem": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 5,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        }
+      },
+      "htmlSha256": "bff03697ebafc34b5ce56a764e1cc91de2944e2800b61056fc608cfc7c9c377d",
+      "bytes": 5241819,
+      "source": "D:\\codex-project\\model-convert\\zenas-dev"
+    }
+  },
+  "10": {
+    "GEM5-1": {
+      "declarations": 1225,
+      "declarationRelations": 2422,
+      "warnings": [],
+      "modules": {
+        "xiangshan.overview": {
+          "nodes": 15,
+          "edges": 27,
+          "scenarios": 5,
+          "steps": 33,
+          "coverage": 0,
+          "structure": null,
+          "statuses": []
+        },
+        "bpu": {
+          "nodes": 11,
+          "edges": 16,
+          "scenarios": 5,
+          "steps": 24,
+          "coverage": 21,
+          "structure": "FTB · 6 个注册组件",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ftq": {
+          "nodes": 8,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 10,
+          "coverage": 11,
+          "structure": "FTQ 128 项 · FSQ 64 项",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ifu": {
+          "nodes": 10,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 11,
+          "coverage": 14,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "decode": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 2,
+          "steps": 6,
+          "coverage": 6,
+          "structure": "6 条/周期 · 译码",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "rename": {
+          "nodes": 4,
+          "edges": 3,
+          "scenarios": 1,
+          "steps": 3,
+          "coverage": 16,
+          "structure": "6 条/周期 · 重命名",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "issue": {
+          "nodes": 13,
+          "edges": 19,
+          "scenarios": 9,
+          "steps": 21,
+          "coverage": 67,
+          "structure": "3 个 IQ · 544 项 · 23 个出口",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "commit": {
+          "nodes": 15,
+          "edges": 14,
+          "scenarios": 4,
+          "steps": 16,
+          "coverage": 14,
+          "structure": "ROB · 分支恢复 / 精确异常 / LVP 失配",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "lsu": {
+          "nodes": 9,
+          "edges": 10,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 22,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "mmu": {
+          "nodes": 9,
+          "edges": 19,
+          "scenarios": 8,
+          "steps": 34,
+          "coverage": 12,
+          "structure": "双侧 Walker · 动态 root_level",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "icache": {
+          "nodes": 7,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 13,
+          "coverage": 7,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "dcache": {
+          "nodes": 7,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 13,
+          "coverage": 10,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "l2": {
+          "nodes": 9,
+          "edges": 13,
+          "scenarios": 5,
+          "steps": 19,
+          "coverage": 9,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "l3": {
+          "nodes": 7,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 13,
+          "coverage": 8,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "bus": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 6,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "mem": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 5,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        }
+      },
+      "htmlSha256": "e695e53d77021985696028bc704fcdc9907f3c570660993157754dec5524b756",
+      "bytes": 5254419,
+      "source": "D:\\huanjian-project\\stage-two\\GEM5-1",
+      "pyzSha256": "31058df61346e712c6a24bd29db84ec6082598dc13bf912330ce980614f91ed9"
+    },
+    "GEM5-2": {
+      "declarations": 1225,
+      "declarationRelations": 2423,
+      "warnings": [],
+      "modules": {
+        "xiangshan.overview": {
+          "nodes": 15,
+          "edges": 27,
+          "scenarios": 5,
+          "steps": 33,
+          "coverage": 0,
+          "structure": null,
+          "statuses": []
+        },
+        "bpu": {
+          "nodes": 11,
+          "edges": 16,
+          "scenarios": 5,
+          "steps": 24,
+          "coverage": 19,
+          "structure": "FTB · 6 个注册组件",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ftq": {
+          "nodes": 8,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 10,
+          "coverage": 11,
+          "structure": "FTQ 128 项 · FSQ 64 项",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "ifu": {
+          "nodes": 7,
+          "edges": 6,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 4,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射",
+            "缺失"
+          ]
+        },
+        "decode": {
+          "nodes": 5,
+          "edges": 4,
+          "scenarios": 2,
+          "steps": 6,
+          "coverage": 6,
+          "structure": "6 条/周期 · 译码",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "rename": {
+          "nodes": 4,
+          "edges": 3,
+          "scenarios": 1,
+          "steps": 3,
+          "coverage": 16,
+          "structure": "6 条/周期 · 重命名",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "issue": {
+          "nodes": 13,
+          "edges": 19,
+          "scenarios": 9,
+          "steps": 21,
+          "coverage": 82,
+          "structure": "12 个 IQ · 272 项 · 19 个出口",
+          "statuses": [
+            "合并",
+            "已映射",
+            "未知",
+            "条件启用"
+          ]
+        },
+        "commit": {
+          "nodes": 15,
+          "edges": 14,
+          "scenarios": 4,
+          "steps": 16,
+          "coverage": 13,
+          "structure": "ROB · 分支恢复 / 精确异常",
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "lsu": {
+          "nodes": 9,
+          "edges": 10,
+          "scenarios": 2,
+          "steps": 9,
+          "coverage": 22,
+          "structure": null,
+          "statuses": [
+            "合并",
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "mmu": {
+          "nodes": 9,
+          "edges": 19,
+          "scenarios": 8,
+          "steps": 34,
+          "coverage": 11,
+          "structure": "双侧 Walker · SV48/SV39 分支",
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "icache": {
+          "nodes": 7,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 13,
+          "coverage": 7,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "dcache": {
+          "nodes": 7,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 13,
+          "coverage": 10,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "l2": {
+          "nodes": 9,
+          "edges": 13,
+          "scenarios": 5,
+          "steps": 19,
+          "coverage": 9,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "l3": {
+          "nodes": 7,
+          "edges": 9,
+          "scenarios": 3,
+          "steps": 13,
+          "coverage": 7,
+          "structure": null,
+          "statuses": [
+            "已映射",
+            "条件启用"
+          ]
+        },
+        "bus": {
+          "nodes": 5,
+          "edges": 5,
+          "scenarios": 1,
+          "steps": 5,
+          "coverage": 6,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        },
+        "mem": {
+          "nodes": 6,
+          "edges": 7,
+          "scenarios": 2,
+          "steps": 8,
+          "coverage": 5,
+          "structure": null,
+          "statuses": [
+            "已映射"
+          ]
+        }
+      },
+      "htmlSha256": "bff03697ebafc34b5ce56a764e1cc91de2944e2800b61056fc608cfc7c9c377d",
+      "bytes": 5241819,
+      "source": "D:\\codex-project\\model-convert\\zenas-dev",
+      "pyzSha256": "31058df61346e712c6a24bd29db84ec6082598dc13bf912330ce980614f91ed9"
+    }
+  }
+}

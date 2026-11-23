@@ -1,0 +1,3999 @@
+{
+  "entry": "configs/example/kmhv3.py",
+  "referenceRevision": "a9124f383499",
+  "parameterFiles": [
+    "configs/common/CacheConfig.py",
+    "configs/common/Caches.py",
+    "configs/common/Options.py",
+    "configs/common/xiangshan.py",
+    "configs/example/kmhv3.py",
+    "src/arch/riscv/RiscvTLB.py",
+    "src/cpu/o3/BaseO3CPU.py",
+    "src/mem/cache/Cache.py"
+  ],
+  "anchors": {
+    "configs/common/CacheConfig.py:159": {
+      "text": "inner_cache.size = inner_cache.size / num_l2_slices",
+      "assignment": "inner_cache.size"
+    },
+    "configs/common/CacheConfig.py:191": {
+      "text": "cache_slice.inner_cpu_port = inner_cache.cpu_side"
+    },
+    "configs/common/CacheConfig.py:199": {
+      "text": "l2_wrapper.cpu_side = system.tol2bus_list[i].mem_side_ports"
+    },
+    "configs/common/CacheConfig.py:235": {
+      "text": "walk_cache_class = PageTableWalkerCache"
+    },
+    "configs/common/CacheConfig.py:280": {
+      "text": "system.l3.cpu_side = system.tol3bus.mem_side_ports"
+    },
+    "configs/common/CacheConfig.py:281": {
+      "text": "system.l3.mem_side = system.membus.cpu_side_ports"
+    },
+    "configs/common/CacheConfig.py:291": {
+      "text": "system.l2_wrappers[i].xbar.mem_side_ports = system.tol3bus.cpu_side_ports"
+    },
+    "configs/common/CacheConfig.py:382": {
+      "text": "system.tol2bus_list[i].cpu_side_ports,"
+    },
+    "configs/common/CacheConfig.py:383": {
+      "text": "system.membus.cpu_side_ports, system.membus.mem_side_ports)",
+      "before": [
+        "system.tol2bus_list[i].cpu_side_ports,"
+      ],
+      "after": [
+        "elif options.external_memory_system:"
+      ]
+    },
+    "configs/common/FUScheduler.py:187": {
+      "text": "class KMHV3Scheduler(Scheduler):"
+    },
+    "configs/common/MemConfig.py:281": {
+      "text": "mem_ctrls[i].port = xbar.mem_side_ports"
+    },
+    "configs/common/xiangshan.py:515": {
+      "text": "if args.mem_type == 'DRAMsim3':"
+    },
+    "configs/example/kmhv3.py:197": {
+      "text": "cpu.branchPred.ubtb.enabled = True",
+      "assignment": "cpu.branchPred.ubtb.enabled"
+    },
+    "configs/example/kmhv3.py:216": {
+      "text": "cpu.icache.size = '64kB'",
+      "assignment": "cpu.icache.size"
+    },
+    "configs/example/kmhv3.py:217": {
+      "text": "cpu.dcache.size = '64kB'",
+      "assignment": "cpu.dcache.size"
+    },
+    "configs/example/kmhv3.py:279": {
+      "text": "args.l3_size = '32MB'",
+      "assignment": "args.l3_size"
+    },
+    "src/arch/riscv/RiscvMMU.py:51": {
+      "text": "l2_shared = RiscvTLBL2(entry_type=\"unified\")"
+    },
+    "src/arch/riscv/RiscvTLB.py:74": {
+      "text": "size = Param.Int(48, \"TLB size\")",
+      "assignment": "size"
+    },
+    "src/arch/riscv/pagetable_walker.cc:1734": {
+      "text": "walker->tlb->insert(entry.vaddr, entry, false, direct);"
+    },
+    "src/arch/riscv/pagetable_walker.cc:2407": {
+      "text": "r.translation->finish(mainFault, r.req, r.tc, mode);",
+      "before": [
+        "}"
+      ],
+      "after": [
+        "}"
+      ]
+    },
+    "src/arch/riscv/pagetable_walker.cc:454": {
+      "text": "Walker::WalkerPort::recvTimingResp(PacketPtr pkt)"
+    },
+    "src/arch/riscv/pagetable_walker.cc:526": {
+      "text": "if (port.sendTimingReq(pkt)) {"
+    },
+    "src/arch/riscv/pagetable_walker.cc:914": {
+      "text": "if ((translateMode == twoStageMode) && (inGstage)) {",
+      "before": [
+        "PacketPtr write = NULL;"
+      ],
+      "after": [
+        "fault = twoStageStepWalk(write);"
+      ]
+    },
+    "src/arch/riscv/tlb.cc:1912": {
+      "text": "walker->doL2TLBHitSchedule(req, tc, translation, mode, paddr, *e_l2tlb,"
+    },
+    "src/arch/riscv/tlb.cc:2460": {
+      "text": "e[i_e] = l2tlb->lookupL2TLB(vaddr, satp.asid, mode, false, i_e, true, direct);"
+    },
+    "src/arch/riscv/tlb.cc:2607": {
+      "text": "fault = walker->start(0, tc, translation, req, mode, false, false, walk_level, false, 0);"
+    },
+    "src/arch/riscv/tlb.cc:2899": {
+      "text": "TLB::translateTiming(const RequestPtr &req, ThreadContext *tc,"
+    },
+    "src/cpu/o3/commit.cc:1219": {
+      "text": "if (fromIEW->squash[tid] &&"
+    },
+    "src/cpu/o3/commit.cc:1360": {
+      "text": "set(toIEW->commitInfo[tid].pc, fromIEW->pc[tid]);"
+    },
+    "src/cpu/o3/commit.cc:2065": {
+      "text": "toIEW->commitInfo[tid].doneMemSeqNum = std::max("
+    },
+    "src/cpu/o3/commit.cc:2129": {
+      "text": "Commit::commitHead(const DynInstPtr &head_inst, unsigned inst_num,"
+    },
+    "src/cpu/o3/commit.cc:2195": {
+      "text": "Fault inst_fault = head_inst->getFault();"
+    },
+    "src/cpu/o3/commit.cc:2264": {
+      "text": "cpu->trap(inst_fault, tid,"
+    },
+    "src/cpu/o3/commit.cc:2569": {
+      "text": "int insts_from_rename = fromRename->size;"
+    },
+    "src/cpu/o3/commit.cc:2738": {
+      "text": "rob->insertInst(inst);"
+    },
+    "src/cpu/o3/commit.cc:2803": {
+      "text": "Commit::markCompletedInsts()"
+    },
+    "src/cpu/o3/commit.cc:2817": {
+      "text": "fromIEW->insts[inst_num]->setCanCommit();"
+    },
+    "src/cpu/o3/commit.cc:879": {
+      "text": "Commit::squashFromTrap(ThreadID tid)"
+    },
+    "src/cpu/o3/decode.cc:1186": {
+      "text": "Decode::decodeInsts(ThreadID tid, unsigned max_insts)"
+    },
+    "src/cpu/o3/decode.cc:1227": {
+      "text": "while (insts_available > 0 && toRenameIndex < aggregateDecodeWidth &&"
+    },
+    "src/cpu/o3/decode.cc:1291": {
+      "text": "toRename->insts[toRename->size++] = fused_inst;"
+    },
+    "src/cpu/o3/decode.cc:1330": {
+      "text": "if (inst->readPredTaken() && !inst->isControl() &&"
+    },
+    "src/cpu/o3/decode.cc:1399": {
+      "text": "selfSquash(inst, inst->threadNumber);",
+      "before": [
+        "// Might want to set some sort of boolean and just do",
+        "// a check at the end"
+      ],
+      "after": [
+        "DPRINTF(Decode,"
+      ]
+    },
+    "src/cpu/o3/fetch.cc:1030": {
+      "text": "Fetch::processCacheCompletion(PacketPtr pkt)"
+    },
+    "src/cpu/o3/fetch.cc:1370": {
+      "text": "Fetch::handleSuccessfulTranslation(ThreadID tid, const RequestPtr &mem_req, Addr fetchPC)"
+    },
+    "src/cpu/o3/fetch.cc:1385": {
+      "text": "PacketPtr data_pkt = new Packet(mem_req, MemCmd::ReadReq);"
+    },
+    "src/cpu/o3/fetch.cc:1410": {
+      "text": "if (!icachePort.sendTimingReq(data_pkt)) {"
+    },
+    "src/cpu/o3/fetch.cc:1504": {
+      "text": "Fetch::finishTranslation(const Fault &fault, const RequestPtr &mem_req,"
+    },
+    "src/cpu/o3/fetch.cc:2137": {
+      "text": "toDecode->insts[toDecode->size++] = inst;"
+    },
+    "src/cpu/o3/fetch.cc:2982": {
+      "text": "dbpbtb->controlSquash(mispred_inst->getFtqId(), mispred_inst->pcState(),"
+    },
+    "src/cpu/o3/fetch.cc:3155": {
+      "text": "Fetch::processPredecodeStage(ThreadID tid)"
+    },
+    "src/cpu/o3/fetch.cc:3217": {
+      "text": "Fetch::handlePredecodeFault(ThreadID tid, const DynInstPtr &instruction,"
+    },
+    "src/cpu/o3/fetch.cc:3258": {
+      "text": "dbpbtb->controlSquash(",
+      "before": [
+        "} else {"
+      ],
+      "after": [
+        "instruction->getFtqId(), instruction->pcState(), target,"
+      ]
+    },
+    "src/cpu/o3/fetch.cc:3740": {
+      "text": "const auto prediction = dbpbtb->ftqFetchBlock(tid);",
+      "before": [
+        "assert(dbpbtb);"
+      ],
+      "after": [
+        "const Addr start_pc = prediction.startPC;"
+      ]
+    },
+    "src/cpu/o3/fetch.cc:3769": {
+      "text": "return fetchCacheLine(start_pc, tid, pc_state.instAddr());"
+    },
+    "src/cpu/o3/fetch.cc:3855": {
+      "text": "Fetch::IcachePort::recvTimingResp(PacketPtr pkt)"
+    },
+    "src/cpu/o3/fetch.cc:864": {
+      "text": "Fetch::handleMultiCacheLineFetch(Addr vaddr, ThreadID tid, Addr pc)"
+    },
+    "src/cpu/o3/fetch.cc:898": {
+      "text": "cpu->mmu->translateTiming(first_mem_req, cpu->thread[tid]->getTC(),"
+    },
+    "src/cpu/o3/fetch.cc:927": {
+      "text": "cpu->mmu->translateTiming(second_mem_req, cpu->thread[tid]->getTC(),"
+    },
+    "src/cpu/o3/iew.cc:1631": {
+      "text": "IEW::dispatchInsts()"
+    },
+    "src/cpu/o3/iew.cc:1714": {
+      "text": "const unsigned dispatched = enableDispatchStage ?"
+    },
+    "src/cpu/o3/iew.cc:1721": {
+      "text": "stallSig->blockRename[tid] = true;",
+      "before": [
+        "if (!fixedbuffer[tid].empty()) {"
+      ],
+      "after": [
+        "stallSig->renameBlockReason[tid] ="
+      ]
+    },
+    "src/cpu/o3/iew.cc:1760": {
+      "text": "IEW::dispatchInstFromRename(ThreadID tid, unsigned max_insts,"
+    },
+    "src/cpu/o3/iew.cc:1806": {
+      "text": "if ((inst->isAtomic() && ldstQueue.sqFull(tid)) || (inst->isLoad() && ldstQueue.lqFull(tid)) ||"
+    },
+    "src/cpu/o3/iew.cc:1831": {
+      "text": "const auto [iq, flags] = scheduler->dispatchBlock(inst, disp_seq);"
+    },
+    "src/cpu/o3/iew.cc:1943": {
+      "text": "instQueue.insert(inst, disp_seq);",
+      "before": [
+        "if (add_to_iq) {"
+      ],
+      "after": [
+        "}"
+      ]
+    },
+    "src/cpu/o3/iew.cc:2450": {
+      "text": "IEW::executeInsts()"
+    },
+    "src/cpu/o3/iew.cc:2622": {
+      "text": "IEW::writebackInsts()"
+    },
+    "src/cpu/o3/iew.cc:2809": {
+      "text": "instQueue.scheduleReadyInsts();"
+    },
+    "src/cpu/o3/iew.cc:968": {
+      "text": "IEW::squashDueToBranch(const DynInstPtr& inst, ThreadID tid)"
+    },
+    "src/cpu/o3/issue_queue.cc:1214": {
+      "text": "IssueQue::selectInst()"
+    },
+    "src/cpu/o3/issue_queue.cc:2396": {
+      "text": "Scheduler::getInstToFU()"
+    },
+    "src/cpu/o3/lsq.cc:1639": {
+      "text": "LSQ::commitStores(InstSeqNum &youngest_inst, ThreadID tid)"
+    },
+    "src/cpu/o3/lsq.cc:3489": {
+      "text": "LSQ::SingleDataRequest::finish(const Fault &fault, const RequestPtr &request,"
+    },
+    "src/cpu/o3/lsq.cc:3917": {
+      "text": "_port.getMMUPtr()->translateTiming(req(i), _inst->thread->getTC(),"
+    },
+    "src/cpu/o3/lsq.cc:4216": {
+      "text": "LSQ::SbufferRequest::sendPacketToCache()"
+    },
+    "src/cpu/o3/lsq.cc:4231": {
+      "text": "LSQ::SingleDataRequest::sendPacketToCache()"
+    },
+    "src/cpu/o3/lsq_unit.cc:1642": {
+      "text": "addToRARReplayQueue(inst);"
+    },
+    "src/cpu/o3/lsq_unit.cc:2251": {
+      "text": "LSQUnit::commitStores(InstSeqNum &youngest_inst)"
+    },
+    "src/cpu/o3/lsq_unit.cc:2567": {
+      "text": "LSQUnit::insertStoreBuffer(Addr vaddr, Addr paddr, uint8_t* datas,"
+    },
+    "src/cpu/o3/lsq_unit.cc:296": {
+      "text": "LSQUnit::completeDataAccess(PacketPtr pkt)"
+    },
+    "src/cpu/o3/lsq_unit.cc:3163": {
+      "text": "if (!bank_conflict && !dcachePort->sendTimingReq(data_pkt)) {"
+    },
+    "src/cpu/o3/lsq_unit.cc:3444": {
+      "text": "LSQUnit::read(LSQRequest *request, ssize_t load_idx)"
+    },
+    "src/cpu/o3/lsq_unit.cc:3983": {
+      "text": "request->sendPacketToCache();",
+      "before": [
+        "// if the cache is not blocked, do cache access"
+      ],
+      "after": [
+        "if (!request->isSent() && !load_inst->needBankConflictReplay() && !load_inst->needMshrArbFailReplay() &&"
+      ]
+    },
+    "src/cpu/o3/lsq_unit.cc:4082": {
+      "text": "LSQUnit::processReplayQueues()"
+    },
+    "src/cpu/o3/lsq_unit.cc:4159": {
+      "text": "inst->issueQue->retryMem(inst);",
+      "before": [
+        "inst->clearNeedReplay();"
+      ],
+      "after": [
+        "}"
+      ]
+    },
+    "src/cpu/o3/lsq_unit.cc:786": {
+      "text": "LSQUnit::insertLoad(const DynInstPtr &load_inst)"
+    },
+    "src/cpu/o3/rename.cc:1125": {
+      "text": "Rename::renameSrcRegs(const DynInstPtr &inst, ThreadID tid)"
+    },
+    "src/cpu/o3/rename.cc:1193": {
+      "text": "Rename::renameDestRegs(const DynInstPtr &inst, ThreadID tid)"
+    },
+    "src/cpu/o3/rename.cc:385": {
+      "text": "Rename::squash(const InstSeqNum &squash_seq_num, ThreadID tid)"
+    },
+    "src/cpu/o3/rename.cc:737": {
+      "text": "Rename::renameInsts(ThreadID tid, unsigned max_insts)"
+    },
+    "src/cpu/o3/rename.cc:801": {
+      "text": "toIEW->insts[toIEWIndex] = inst;"
+    },
+    "src/cpu/o3/rename.cc:962": {
+      "text": "Rename::doSquash(const InstSeqNum &squashed_seq_num, ThreadID tid)"
+    },
+    "src/cpu/pred/btb/btb_ittage.cc:193": {
+      "text": "BTBITTAGE::putPCHistory(Addr stream_start, const bitset &history, std::vector<FullBTBPrediction> &stagePreds) {"
+    },
+    "src/cpu/pred/btb/btb_mgsc.cc:591": {
+      "text": "BTBMGSC::putPCHistory(Addr stream_start, const boost::dynamic_bitset<> &history,"
+    },
+    "src/cpu/pred/btb/decoupled_bpred.cc:1100": {
+      "text": "DecoupledBPUWithBTB::enqueuePrediction(ThreadID tid, FullBTBPrediction &pred)"
+    },
+    "src/cpu/pred/btb/decoupled_bpred.cc:366": {
+      "text": "DecoupledBPUWithBTB::requestNewPrediction(ThreadID tid)"
+    },
+    "src/cpu/pred/btb/decoupled_bpred.cc:387": {
+      "text": "for (int i = 0; i < numComponents; i++) {",
+      "before": [
+        "// Query each predictor component with current PC and history"
+      ],
+      "after": [
+        "components[i]->putPCHistory(thread.s0PC, thread.s0History, predsOfEachStage);  //s0History not used"
+      ]
+    },
+    "src/cpu/pred/btb/decoupled_bpred.cc:388": {
+      "text": "components[i]->putPCHistory(thread.s0PC, thread.s0History, predsOfEachStage);  //s0History not used"
+    },
+    "src/cpu/pred/btb/decoupled_bpred.cc:400": {
+      "text": "DecoupledBPUWithBTB::generateFinalPredAndCreateBubbles(ThreadID tid)"
+    },
+    "src/cpu/pred/btb/decoupled_bpred.cc:555": {
+      "text": "DecoupledBPUWithBTB::processNewPrediction(ThreadID tid)"
+    },
+    "src/cpu/pred/btb/decoupled_bpred.cc:683": {
+      "text": "DecoupledBPUWithBTB::handleSquash(ThreadID tid, unsigned target_id,"
+    },
+    "src/cpu/pred/btb/decoupled_bpred.cc:717": {
+      "text": "ftq.squashAfter(target_id, tid);"
+    },
+    "src/cpu/pred/btb/ftq.cc:52": {
+      "text": "FetchTargetQueue::insert(FetchTarget&& target)"
+    },
+    "src/cpu/pred/btb/ftq.cc:60": {
+      "text": "FetchTargetQueue::finishTarget(ThreadID tid)"
+    },
+    "src/cpu/pred/btb/ftq.cc:73": {
+      "text": "FetchTargetQueue::squashAfter(FetchTargetId squashId, ThreadID tid)"
+    },
+    "src/cpu/pred/btb/ftq.hh:56": {
+      "text": "inline FetchTarget& fetching(ThreadID tid) { return get(queue[tid].fetchptr, tid); }"
+    },
+    "src/cpu/pred/btb/mbtb.cc:311": {
+      "text": "MBTB::putPCHistory(Addr startAddr,"
+    },
+    "src/cpu/pred/btb/ras.cc:101": {
+      "text": "BTBRAS::putPCHistory(Addr startAddr, const boost::dynamic_bitset<> &history,"
+    },
+    "src/mem/cache/base.cc:1018": {
+      "text": "BaseCache::recvTimingResp(PacketPtr pkt)"
+    },
+    "src/mem/cache/base.cc:1142": {
+      "text": "blk = handleFill("
+    },
+    "src/mem/cache/base.cc:2048": {
+      "text": "BaseCache::access(PacketPtr pkt, CacheBlk *&blk, Cycles &lat,"
+    },
+    "src/mem/cache/base.cc:2365": {
+      "text": "BaseCache::handleFill("
+    },
+    "src/mem/cache/base.cc:2806": {
+      "text": "BaseCache::sendMSHRQueuePacket(MSHR* mshr)"
+    },
+    "src/mem/cache/base.cc:410": {
+      "text": "BaseCache::handleTimingReqHit(PacketPtr pkt, CacheBlk *blk, Tick request_time, bool first_acc_after_pf)"
+    },
+    "src/mem/cache/base.cc:516": {
+      "text": "BaseCache::handleTimingReqMiss(PacketPtr pkt, MSHR *mshr, CacheBlk *blk,"
+    },
+    "src/mem/cache/base.cc:709": {
+      "text": "BaseCache::recvTimingReq(PacketPtr pkt)"
+    },
+    "src/mem/cache/xs_l2/L2CacheSlice.cc:165": {
+      "text": "if (inner_cache_blocked || !requestBuffer.empty()) {",
+      "before": [
+        "if (!pkt->needsResponse() && !is_prefetch) {"
+      ],
+      "after": [
+        "DPRINTF(L2CacheSlice, \"Inner cache busy, rejecting WQ request from CPU side\\n\");"
+      ]
+    },
+    "src/mem/cache/xs_l2/L2CacheWrapper.cc:153": {
+      "text": "L2CacheWrapper::CPUSidePort::recvTimingReq(PacketPtr pkt)"
+    },
+    "src/mem/coherent_xbar.cc:181": {
+      "text": "CoherentXBar::recvTimingReq(PacketPtr pkt, PortID cpu_side_port_id)"
+    },
+    "src/mem/coherent_xbar.cc:194": {
+      "text": "PortID mem_side_port_id = findPort(pkt->getAddrRange());",
+      "before": [
+        "// determine the destination based on the destination address range"
+      ],
+      "after": []
+    },
+    "src/mem/coherent_xbar.cc:499": {
+      "text": "CoherentXBar::recvTimingResp(PacketPtr pkt, PortID mem_side_port_id)"
+    },
+    "src/mem/coherent_xbar.cc:505": {
+      "text": "const auto route_lookup = routeTo.find(pkt->req);",
+      "before": [
+        "// determine the destination"
+      ],
+      "after": [
+        "assert(route_lookup != routeTo.end());"
+      ]
+    },
+    "src/mem/dramsim3.cc:105": {
+      "text": "DRAMsim3::sendResponse()"
+    },
+    "src/mem/dramsim3.cc:191": {
+      "text": "DRAMsim3::recvTimingReq(PacketPtr pkt)"
+    },
+    "src/mem/dramsim3.cc:224": {
+      "text": "outstandingReads[pkt->getAddr()].push(pkt);"
+    },
+    "src/mem/dramsim3.cc:256": {
+      "text": "wrapper.enqueue(pkt->getAddr(), pkt->isWrite());"
+    },
+    "src/mem/dramsim3.cc:312": {
+      "text": "void DRAMsim3::readComplete(unsigned id, uint64_t addr)"
+    },
+    "src/mem/dramsim3.cc:404": {
+      "text": "DRAMsim3::MemoryPort::recvTimingReq(PacketPtr pkt)"
+    }
+  },
+  "overview": {
+    "streams": [
+      {
+        "name": "指令取指与地址翻译",
+        "steps": [
+          {
+            "a": "bpu",
+            "b": "ftq",
+            "type": "预测",
+            "text": "预测器将取指块放入 FTQ。"
+          },
+          {
+            "a": "ftq",
+            "b": "ifu",
+            "type": "供给",
+            "text": "Fetch 选中 FTQ 目标，读取块起始 PC。"
+          },
+          {
+            "a": "ifu",
+            "b": "mmu",
+            "type": "请求",
+            "text": "Fetch 为取指虚拟地址发起 Execute 翻译。"
+          },
+          {
+            "a": "mmu",
+            "b": "ifu",
+            "type": "响应",
+            "text": "翻译成功，完成回调取得物理地址。",
+            "path": "src/cpu/o3/fetch.cc:1504"
+          },
+          {
+            "a": "ifu",
+            "b": "icache",
+            "type": "读取",
+            "text": "Fetch 使用已翻译的请求发送指令缓存读包。"
+          },
+          {
+            "a": "icache",
+            "b": "ifu",
+            "type": "响应",
+            "text": "指令缓存返回该取指请求的数据。",
+            "path": "src/cpu/o3/fetch.cc:3855"
+          },
+          {
+            "a": "ifu",
+            "b": "decode",
+            "type": "传递",
+            "text": "Fetch 向译码阶段供给动态指令。"
+          }
+        ],
+        "path": "src/cpu/o3/fetch.cc:927"
+      },
+      {
+        "name": "数据加载与地址翻译",
+        "steps": [
+          {
+            "a": "iew",
+            "b": "lsu",
+            "type": "分配",
+            "text": "加载指令进入 LSQ。"
+          },
+          {
+            "a": "lsu",
+            "b": "mmu",
+            "type": "请求",
+            "text": "LSQ 为这次加载提交 Read 模式翻译。"
+          },
+          {
+            "a": "mmu",
+            "b": "lsu",
+            "type": "响应",
+            "text": "翻译完成，LSQ 请求回调获得结果。",
+            "path": "src/cpu/o3/lsq.cc:3489"
+          },
+          {
+            "a": "lsu",
+            "b": "dcache",
+            "type": "读取",
+            "text": "该演示选择允许发包且没有存储转发的加载。"
+          },
+          {
+            "a": "dcache",
+            "b": "lsu",
+            "type": "响应",
+            "text": "数据响应返回，LSQ 处理这次加载的完成。",
+            "path": "src/cpu/o3/lsq_unit.cc:296"
+          }
+        ],
+        "path": "src/cpu/o3/lsq.cc:3917"
+      },
+      {
+        "name": "整核 · 取指到整数提交",
+        "path": "src/cpu/o3/commit.cc:2129",
+        "steps": [
+          {
+            "a": "bpu",
+            "b": "ftq",
+            "type": "预测",
+            "text": "预测器将取指块放入 FTQ。"
+          },
+          {
+            "a": "ftq",
+            "b": "ifu",
+            "type": "供给",
+            "text": "Fetch 选中 FTQ 目标，读取块起始 PC。"
+          },
+          {
+            "a": "ifu",
+            "b": "mmu",
+            "type": "请求",
+            "text": "Fetch 为取指虚拟地址发起 Execute 翻译。"
+          },
+          {
+            "a": "mmu",
+            "b": "ifu",
+            "type": "响应",
+            "text": "翻译成功，完成回调取得物理地址。",
+            "path": "src/cpu/o3/fetch.cc:1504"
+          },
+          {
+            "a": "ifu",
+            "b": "icache",
+            "type": "读取",
+            "text": "Fetch 使用已翻译的请求发送指令缓存读包。"
+          },
+          {
+            "a": "icache",
+            "b": "ifu",
+            "type": "响应",
+            "text": "指令缓存返回该取指请求的数据。",
+            "path": "src/cpu/o3/fetch.cc:3855"
+          },
+          {
+            "a": "ifu",
+            "b": "decode",
+            "type": "传递",
+            "text": "Fetch 向译码阶段供给动态指令。"
+          },
+          {
+            "a": "decode",
+            "b": "rename",
+            "type": "译码",
+            "text": "已译码动态指令进入重命名。"
+          },
+          {
+            "a": "rename",
+            "b": "dispatch",
+            "type": "分派",
+            "text": "分配物理目的寄存器并向 IEW 传递指令。"
+          },
+          {
+            "a": "dispatch",
+            "b": "iew",
+            "type": "发射",
+            "text": "就绪整数指令被选择并执行。"
+          },
+          {
+            "a": "iew",
+            "b": "commit",
+            "type": "提交",
+            "text": "写回完成状态。该指令到达 ROB 头且无异常时按序退休。"
+          }
+        ]
+      },
+      {
+        "name": "控制流 · 分支误预测恢复",
+        "path": "src/cpu/o3/iew.cc:968",
+        "steps": [
+          {
+            "a": "iew",
+            "b": "commit",
+            "type": "误预测",
+            "text": "分支执行发现目标或方向错误，向 Commit 提交 squash 信息。"
+          },
+          {
+            "a": "commit",
+            "b": "ifu",
+            "type": "重定向",
+            "text": "Commit 广播恢复 PC 与 squash 边界，Fetch 丢弃错误路径工作。"
+          },
+          {
+            "a": "ifu",
+            "b": "bpu",
+            "type": "恢复",
+            "text": "Fetch 调用 controlSquash 恢复预测器。"
+          },
+          {
+            "a": "bpu",
+            "b": "ftq",
+            "type": "预测",
+            "text": "预测器将取指块放入 FTQ。"
+          },
+          {
+            "a": "ftq",
+            "b": "ifu",
+            "type": "供给",
+            "text": "Fetch 选中 FTQ 目标，读取块起始 PC。"
+          }
+        ]
+      },
+      {
+        "name": "存储层次 · Load miss 与回填",
+        "path": "configs/common/CacheConfig.py:291",
+        "steps": [
+          {
+            "a": "iew",
+            "b": "lsu",
+            "type": "分配",
+            "text": "加载指令进入 LSQ。"
+          },
+          {
+            "a": "lsu",
+            "b": "mmu",
+            "type": "请求",
+            "text": "LSQ 为这次加载提交 Read 模式翻译。"
+          },
+          {
+            "a": "mmu",
+            "b": "lsu",
+            "type": "响应",
+            "text": "翻译完成，LSQ 请求回调获得结果。",
+            "path": "src/cpu/o3/lsq.cc:3489"
+          },
+          {
+            "a": "lsu",
+            "b": "dcache",
+            "type": "读取",
+            "text": "该演示选择允许发包且没有存储转发的加载。"
+          },
+          {
+            "a": "dcache",
+            "b": "l2",
+            "type": "miss",
+            "text": "数据行缺失，经 tol2bus 请求对应 L2 切片。"
+          },
+          {
+            "a": "l2",
+            "b": "llc",
+            "type": "miss",
+            "text": "切片缺失经 tol3bus 读 L3。"
+          },
+          {
+            "a": "llc",
+            "b": "fabric",
+            "type": "miss",
+            "text": "L3 未命中，向系统总线发读包。"
+          },
+          {
+            "a": "fabric",
+            "b": "mem",
+            "type": "读取",
+            "text": "总线按地址路由 DRAMsim3 请求。"
+          },
+          {
+            "a": "mem",
+            "b": "fabric",
+            "type": "response",
+            "text": "DRAM 读完成，返回响应包。"
+          },
+          {
+            "a": "fabric",
+            "b": "llc",
+            "type": "refill",
+            "text": "总线将数据送回请求的 L3。"
+          },
+          {
+            "a": "llc",
+            "b": "l2",
+            "type": "refill",
+            "text": "L3 满足 L2 请求。"
+          },
+          {
+            "a": "l2",
+            "b": "dcache",
+            "type": "refill",
+            "text": "L2 返回缓存行，L1D 填充。"
+          },
+          {
+            "a": "dcache",
+            "b": "lsu",
+            "type": "响应",
+            "text": "数据响应返回，LSQ 处理这次加载的完成。",
+            "path": "src/cpu/o3/lsq_unit.cc:296"
+          }
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "id": "bpu",
+        "title": "BPU",
+        "sub": "解耦分支预测",
+        "path": "src/cpu/pred/btb/decoupled_bpred.cc:555",
+        "target": "bpu",
+        "x": 25,
+        "y": 45,
+        "detail": "RTL 文档列出 µBTB、Ahead BTB、Main BTB、TAGE、SC、ITTAGE 与 RAS。模型把已启用的预测组件接入同一次 PC / 历史查询，随后选取有效预测并计算覆盖气泡。"
+      },
+      {
+        "id": "ftq",
+        "title": "FTQ",
+        "sub": "取指目标队列",
+        "path": "src/cpu/pred/btb/ftq.cc:52",
+        "target": "ftq",
+        "x": 283,
+        "y": 45,
+        "detail": "RTL 分别保存块地址、预测元信息与重定向信息，并向 IFU / ICache 供给地址。模型以按线程组织的 FetchTarget 队列和取指游标承载这些状态，由 Fetch 接手地址翻译与缓存读请求。"
+      },
+      {
+        "id": "ifu",
+        "title": "IFU",
+        "sub": "取指与预译码",
+        "path": "src/cpu/o3/fetch.cc:3769",
+        "target": "ifu",
+        "x": 541,
+        "y": 45,
+        "detail": "IFU 切分缓存返回的指令并完成预译码。O3 Fetch 持有地址翻译回调与 icachePort。"
+      },
+      {
+        "id": "icache",
+        "title": "L1 I-Cache",
+        "sub": "指令缓存",
+        "path": "configs/example/kmhv3.py:216",
+        "target": "icache",
+        "x": 799,
+        "y": 45,
+        "detail": "RTL 描述 prefetchPipe、wayLookup、mainPipe 和缺失处理。经典缓存模型以 tag 查询、MSHR 与 timing port 表示访问和回填。"
+      },
+      {
+        "id": "commit",
+        "title": "ROB / Commit",
+        "sub": "顺序提交与恢复",
+        "path": "src/cpu/o3/commit.cc:2129",
+        "target": "commit",
+        "x": 25,
+        "y": 170,
+        "detail": "ROB 按程序顺序保存动态指令。Commit 检查就绪状态、处理异常和恢复，并按提交带宽退休指令。"
+      },
+      {
+        "id": "iew",
+        "title": "Issue / Execute",
+        "sub": "发射、执行与写回",
+        "path": "src/cpu/o3/iew.cc:2622",
+        "target": "iew",
+        "x": 283,
+        "y": 170,
+        "detail": "RTL 的调度、执行和写回在模型中由 Scheduler、IssueQue 与 IEW 协作；分支执行结果可触发提交阶段的恢复。"
+      },
+      {
+        "id": "dispatch",
+        "title": "Dispatch",
+        "sub": "分派与调度",
+        "path": "src/cpu/o3/iew.cc:1631",
+        "target": "dispatch",
+        "x": 541,
+        "y": 170,
+        "detail": "IEW 按指令类型检查队列容量和入口带宽。配置决定指令经过独立分派队列还是直接从 Rename 分派。"
+      },
+      {
+        "id": "decode",
+        "title": "Decode",
+        "sub": "译码与控制流检查",
+        "path": "src/cpu/o3/decode.cc:1186",
+        "target": "decode",
+        "x": 799,
+        "y": 170,
+        "detail": "Decode 从 Fetch 接收 DynInst，检查控制流并向 Rename 发送译码结果。"
+      },
+      {
+        "id": "rename",
+        "title": "Rename",
+        "sub": "物理寄存器映射",
+        "path": "src/cpu/o3/rename.cc:737",
+        "target": "rename",
+        "x": 25,
+        "y": 295,
+        "detail": "RTL 对照 RAT 和 FreeList。模型通过推测映射、物理寄存器分配和恢复记录实现重命名。"
+      },
+      {
+        "id": "lsu",
+        "title": "LSU / LSQ",
+        "sub": "访存执行与队列",
+        "path": "src/cpu/o3/lsq.cc:3917",
+        "target": "lsu",
+        "x": 283,
+        "y": 295,
+        "detail": "LQ、SQ、RAR、RAW 与 SBuffer 对应模型中的 LSQ 和 LSQUnit，处理地址翻译、数据访问、重放与已提交存储。"
+      },
+      {
+        "id": "mmu",
+        "title": "MMU",
+        "sub": "指令与数据翻译",
+        "path": "src/arch/riscv/RiscvMMU.py:51",
+        "target": "mmu",
+        "x": 541,
+        "y": 295,
+        "detail": "RTL 文档区分 Repeater、PTW、LLPTW 和 HPTW。模型由两侧 L1 TLB、共享 L2 TLB 和各自的 walker 承担查找、遍历与回调。虚拟化路径由 walker 的两阶段状态处理。"
+      },
+      {
+        "id": "dcache",
+        "title": "L1 D-Cache",
+        "sub": "数据缓存",
+        "path": "configs/example/kmhv3.py:217",
+        "target": "dcache",
+        "x": 799,
+        "y": 295,
+        "detail": "LoadPipe 查询标签，MissQueue 跟踪缺失，MainPipe 处理重填。对应模型中的 BaseCache、MSHR 和 handleFill。"
+      },
+      {
+        "id": "mem",
+        "title": "DRAMsim3",
+        "sub": "内存时序模型",
+        "path": "configs/common/xiangshan.py:515",
+        "target": "mem",
+        "x": 25,
+        "y": 420,
+        "detail": "DRAMsim3 接收 gem5 内存端口的请求，向时序后端排队，并在完成回调后发送读响应。"
+      },
+      {
+        "id": "fabric",
+        "title": "System bus",
+        "sub": "系统互联",
+        "path": "configs/common/CacheConfig.py:383",
+        "target": "fabric",
+        "x": 283,
+        "y": 420,
+        "detail": "RTL 系统互连对接一致性请求。此图聚焦 gem5 的 membus 地址路由及返回路径；图中消息单位为 timing packet。RTL 的 TileLink / CHI 通道在此层次以经典交叉开关的请求、探测与响应端口表示。"
+      },
+      {
+        "id": "llc",
+        "title": "L3 / LLC",
+        "sub": "末级缓存",
+        "path": "configs/example/kmhv3.py:279",
+        "target": "llc",
+        "x": 541,
+        "y": 420,
+        "detail": "共享 L3 接收 L2 下行请求并通过系统总线处理缺失。所引 RTL 章节描述 L2 的核外边界。"
+      },
+      {
+        "id": "l2",
+        "title": "L2 Cache",
+        "sub": "切片缓存",
+        "path": "configs/common/CacheConfig.py:199",
+        "target": "l2",
+        "x": 799,
+        "y": 420,
+        "detail": "CoupledL2 对照 XS-GEM5 的 wrapper、切片流水线、inner_cache 和内部交叉开关。"
+      }
+    ],
+    "edges": [
+      {
+        "a": "bpu",
+        "b": "ftq",
+        "label": "预测块入队",
+        "path": "src/cpu/pred/btb/decoupled_bpred.cc:1100"
+      },
+      {
+        "a": "ftq",
+        "b": "ifu",
+        "label": "供给取指目标",
+        "path": "src/cpu/o3/fetch.cc:3740"
+      },
+      {
+        "a": "ifu",
+        "b": "mmu",
+        "label": "Execute 地址翻译与回调",
+        "path": "src/cpu/o3/fetch.cc:898"
+      },
+      {
+        "a": "ifu",
+        "b": "icache",
+        "label": "指令读取与响应",
+        "path": "src/cpu/o3/fetch.cc:1410"
+      },
+      {
+        "a": "ifu",
+        "b": "decode",
+        "label": "动态指令进入译码",
+        "path": "src/cpu/o3/fetch.cc:2137"
+      },
+      {
+        "a": "iew",
+        "b": "lsu",
+        "label": "IEW 内访存指令进入 LSQ",
+        "path": "src/cpu/o3/iew.cc:1631"
+      },
+      {
+        "a": "lsu",
+        "b": "mmu",
+        "label": "Read / Write 翻译与回调",
+        "path": "src/cpu/o3/lsq.cc:3917"
+      },
+      {
+        "a": "lsu",
+        "b": "dcache",
+        "label": "数据访问与响应",
+        "path": "src/cpu/o3/lsq_unit.cc:3163"
+      },
+      {
+        "a": "decode",
+        "b": "iew",
+        "label": "旧版合并视图 · 经 Rename 和 Dispatch",
+        "path": "src/cpu/o3/rename.cc:801",
+        "legacy": true
+      },
+      {
+        "a": "decode",
+        "b": "rename",
+        "label": "译码输出",
+        "path": "src/cpu/o3/decode.cc:1186"
+      },
+      {
+        "a": "rename",
+        "b": "dispatch",
+        "label": "重命名指令进入 IEW",
+        "path": "src/cpu/o3/iew.cc:1631"
+      },
+      {
+        "a": "dispatch",
+        "b": "iew",
+        "label": "调度就绪指令",
+        "path": "src/cpu/o3/iew.cc:2809"
+      },
+      {
+        "a": "iew",
+        "b": "commit",
+        "label": "执行完成或请求 squash",
+        "path": "src/cpu/o3/iew.cc:2622"
+      },
+      {
+        "a": "commit",
+        "b": "ifu",
+        "label": "commitInfo 重定向",
+        "path": "src/cpu/o3/fetch.cc:2982"
+      },
+      {
+        "a": "ifu",
+        "b": "bpu",
+        "label": "恢复预测状态",
+        "path": "src/cpu/o3/fetch.cc:2982"
+      },
+      {
+        "a": "icache",
+        "b": "l2",
+        "label": "tol2bus · 指令缺失",
+        "path": "configs/common/CacheConfig.py:382"
+      },
+      {
+        "a": "mmu",
+        "b": "l2",
+        "label": "页表缓存未命中经 tol2bus",
+        "path": "configs/common/CacheConfig.py:382"
+      },
+      {
+        "a": "dcache",
+        "b": "l2",
+        "label": "tol2bus · 数据缺失",
+        "path": "configs/common/CacheConfig.py:199"
+      },
+      {
+        "a": "l2",
+        "b": "llc",
+        "label": "tol3bus · 切片下行",
+        "path": "configs/common/CacheConfig.py:291"
+      },
+      {
+        "a": "llc",
+        "b": "fabric",
+        "label": "L3 mem_side",
+        "path": "configs/common/CacheConfig.py:281"
+      },
+      {
+        "a": "fabric",
+        "b": "mem",
+        "label": "membus · 内存控制器",
+        "path": "configs/common/MemConfig.py:281"
+      }
+    ],
+    "id": "overview"
+  },
+  "modules": {
+    "bpu": {
+      "title": "BPU · 分支预测",
+      "rtl": "https://docs.xiangshan.cc/projects/design/zh-cn/kunminghu-v3/frontend/BPU/",
+      "mapping": "RTL 文档列出 µBTB、Ahead BTB、Main BTB、TAGE、SC、ITTAGE 与 RAS。模型把已启用的预测组件接入同一次 PC / 历史查询，随后选取有效预测并计算覆盖气泡。",
+      "nodes": [
+        {
+          "id": "redirect",
+          "title": "IFU",
+          "sub": "重定向输入",
+          "role": "up",
+          "path": "src/cpu/o3/fetch.cc:3258",
+          "detail": "预译码检查发现直接控制流目标错误时，以 FTQ ID 和正确 PC 调用 controlSquash。",
+          "target": "ifu"
+        },
+        {
+          "id": "pc",
+          "title": "PC / History",
+          "sub": "起始 PC 与推测历史",
+          "role": "internal",
+          "path": "src/cpu/pred/btb/decoupled_bpred.cc:366",
+          "detail": "每个线程维护 s0PC 与预测历史。发生恢复时依据保留的 FTQ 项重建历史并写入重定向 PC。"
+        },
+        {
+          "id": "components",
+          "title": "BTB / TAGE",
+          "sub": "目标、方向与历史预测",
+          "role": "internal",
+          "path": "configs/example/kmhv3.py:197",
+          "detail": "预测器向启用的预测组件提供同一次 PC 和历史查询，组件开关来自所选配置。"
+        },
+        {
+          "id": "select",
+          "title": "Override",
+          "sub": "选择预测与计算气泡",
+          "role": "internal",
+          "path": "src/cpu/pred/btb/decoupled_bpred.cc:400",
+          "detail": "从后向前扫描各级有效结果，选取最终预测，比较较早级预测以计算 override 代价。"
+        },
+        {
+          "id": "ftq",
+          "title": "FTQ",
+          "sub": "预测目标与恢复信息",
+          "role": "down",
+          "path": "src/cpu/pred/btb/decoupled_bpred.cc:1100",
+          "detail": "创建 FetchTarget，保留恢复状态，推进 s0PC 和推测历史，最后插入 FTQ。",
+          "target": "ftq"
+        },
+        {
+          "id": "mbtb",
+          "title": "Main BTB",
+          "sub": "分支位置与目标",
+          "role": "internal",
+          "path": "src/cpu/pred/btb/mbtb.cc:311",
+          "detail": "查询主 BTB，为对应预测级提供块内分支和目标。"
+        },
+        {
+          "id": "mgsc",
+          "title": "MGSC",
+          "sub": "条件方向统计修正",
+          "role": "internal",
+          "path": "src/cpu/pred/btb/btb_mgsc.cc:591",
+          "detail": "统计修正器参与条件分支方向预测。"
+        },
+        {
+          "id": "ittage",
+          "title": "ITTAGE",
+          "sub": "间接跳转目标",
+          "role": "internal",
+          "path": "src/cpu/pred/btb/btb_ittage.cc:193",
+          "detail": "利用历史预测间接分支目标。"
+        },
+        {
+          "id": "ras",
+          "title": "RAS",
+          "sub": "返回地址",
+          "role": "internal",
+          "path": "src/cpu/pred/btb/ras.cc:101",
+          "detail": "返回预测使用推测的返回地址栈状态。"
+        }
+      ],
+      "edges": [
+        {
+          "a": "redirect",
+          "b": "pc",
+          "label": "恢复预测历史与 PC",
+          "path": "src/cpu/pred/btb/decoupled_bpred.cc:683"
+        },
+        {
+          "a": "pc",
+          "b": "components",
+          "label": "PC 与历史查询",
+          "path": "src/cpu/pred/btb/decoupled_bpred.cc:387"
+        },
+        {
+          "a": "components",
+          "b": "select",
+          "label": "各级候选预测",
+          "path": "src/cpu/pred/btb/decoupled_bpred.cc:400"
+        },
+        {
+          "a": "select",
+          "b": "ftq",
+          "label": "最终预测入队",
+          "path": "src/cpu/pred/btb/decoupled_bpred.cc:1100"
+        },
+        {
+          "a": "pc",
+          "b": "mbtb",
+          "label": "分发同一 PC / 历史查询",
+          "path": "src/cpu/pred/btb/decoupled_bpred.cc:388"
+        },
+        {
+          "a": "mbtb",
+          "b": "select",
+          "label": "贡献预测级结果",
+          "path": "src/cpu/pred/btb/mbtb.cc:311"
+        },
+        {
+          "a": "pc",
+          "b": "mgsc",
+          "label": "分发同一 PC / 历史查询",
+          "path": "src/cpu/pred/btb/decoupled_bpred.cc:388"
+        },
+        {
+          "a": "mgsc",
+          "b": "select",
+          "label": "贡献预测级结果",
+          "path": "src/cpu/pred/btb/btb_mgsc.cc:591"
+        },
+        {
+          "a": "pc",
+          "b": "ittage",
+          "label": "分发同一 PC / 历史查询",
+          "path": "src/cpu/pred/btb/decoupled_bpred.cc:388"
+        },
+        {
+          "a": "ittage",
+          "b": "select",
+          "label": "贡献预测级结果",
+          "path": "src/cpu/pred/btb/btb_ittage.cc:193"
+        },
+        {
+          "a": "pc",
+          "b": "ras",
+          "label": "分发同一 PC / 历史查询",
+          "path": "src/cpu/pred/btb/decoupled_bpred.cc:388"
+        },
+        {
+          "a": "ras",
+          "b": "select",
+          "label": "贡献预测级结果",
+          "path": "src/cpu/pred/btb/ras.cc:101"
+        }
+      ],
+      "streams": [
+        {
+          "name": "重定向后的重新预测",
+          "path": "src/cpu/pred/btb/decoupled_bpred.cc:683",
+          "steps": [
+            {
+              "a": "redirect",
+              "b": "pc",
+              "type": "重定向",
+              "text": "命中原 FTQ 项，恢复预测历史并切换到正确 PC。"
+            },
+            {
+              "a": "pc",
+              "b": "components",
+              "type": "查询",
+              "text": "向预测组件提交新 PC 和历史。"
+            },
+            {
+              "a": "components",
+              "b": "select",
+              "type": "选择",
+              "text": "选出最后一级有效预测并检查覆盖代价。"
+            },
+            {
+              "a": "select",
+              "b": "ftq",
+              "type": "入队",
+              "text": "队列可用时写入新预测块。"
+            }
+          ]
+        },
+        {
+          "name": "Main BTB 对预测的贡献",
+          "path": "src/cpu/pred/btb/mbtb.cc:311",
+          "steps": [
+            {
+              "a": "pc",
+              "b": "mbtb",
+              "type": "查询",
+              "text": "本例聚焦同一轮查询中的 Main BTB。"
+            },
+            {
+              "a": "mbtb",
+              "b": "select",
+              "type": "候选",
+              "text": "查询主 BTB，为对应预测级提供块内分支和目标。"
+            },
+            {
+              "a": "select",
+              "b": "ftq",
+              "type": "入队",
+              "text": "选定的阶段结果形成取指目标。"
+            }
+          ]
+        },
+        {
+          "name": "MGSC 对预测的贡献",
+          "path": "src/cpu/pred/btb/btb_mgsc.cc:591",
+          "steps": [
+            {
+              "a": "pc",
+              "b": "mgsc",
+              "type": "查询",
+              "text": "本例聚焦同一轮查询中的 MGSC。"
+            },
+            {
+              "a": "mgsc",
+              "b": "select",
+              "type": "候选",
+              "text": "统计修正器参与条件分支方向预测。"
+            },
+            {
+              "a": "select",
+              "b": "ftq",
+              "type": "入队",
+              "text": "选定的阶段结果形成取指目标。"
+            }
+          ]
+        },
+        {
+          "name": "ITTAGE 对预测的贡献",
+          "path": "src/cpu/pred/btb/btb_ittage.cc:193",
+          "steps": [
+            {
+              "a": "pc",
+              "b": "ittage",
+              "type": "查询",
+              "text": "本例聚焦同一轮查询中的 ITTAGE。"
+            },
+            {
+              "a": "ittage",
+              "b": "select",
+              "type": "候选",
+              "text": "利用历史预测间接分支目标。"
+            },
+            {
+              "a": "select",
+              "b": "ftq",
+              "type": "入队",
+              "text": "选定的阶段结果形成取指目标。"
+            }
+          ]
+        },
+        {
+          "name": "RAS 对预测的贡献",
+          "path": "src/cpu/pred/btb/ras.cc:101",
+          "steps": [
+            {
+              "a": "pc",
+              "b": "ras",
+              "type": "查询",
+              "text": "本例聚焦同一轮查询中的 RAS。"
+            },
+            {
+              "a": "ras",
+              "b": "select",
+              "type": "候选",
+              "text": "返回预测使用推测的返回地址栈状态。"
+            },
+            {
+              "a": "select",
+              "b": "ftq",
+              "type": "入队",
+              "text": "选定的阶段结果形成取指目标。"
+            }
+          ]
+        }
+      ],
+      "id": "bpu"
+    },
+    "ftq": {
+      "title": "FTQ · 取指目标队列",
+      "rtl": "https://docs.xiangshan.cc/projects/design/zh-cn/kunminghu-v3/frontend/FTQ/",
+      "mapping": "RTL 分别保存块地址、预测元信息与重定向信息，并向 IFU / ICache 供给地址。模型以按线程组织的 FetchTarget 队列和取指游标承载这些状态，由 Fetch 接手地址翻译与缓存读请求。",
+      "nodes": [
+        {
+          "id": "bpu",
+          "title": "BPU",
+          "sub": "预测块输入",
+          "role": "up",
+          "path": "src/cpu/pred/btb/decoupled_bpred.cc:1100",
+          "detail": "预测器完成一个块的预测，携带起始 PC、预测与恢复元信息入队。",
+          "target": "bpu"
+        },
+        {
+          "id": "entries",
+          "title": "Target entries",
+          "sub": "按线程存储预测块",
+          "role": "internal",
+          "path": "src/cpu/pred/btb/ftq.cc:52",
+          "detail": "insert 将目标压入队尾，并按线程维护预测项和取指游标。"
+        },
+        {
+          "id": "cursor",
+          "title": "Fetch pointer",
+          "sub": "队列取指游标",
+          "role": "internal",
+          "path": "src/cpu/pred/btb/ftq.cc:60",
+          "detail": "fetching 依照 fetchptr 读取目标。完成取指使游标前移，队项继续保留至提交。"
+        },
+        {
+          "id": "ifu",
+          "title": "IFU",
+          "sub": "取指目标消费",
+          "role": "down",
+          "path": "src/cpu/o3/fetch.cc:3740",
+          "detail": "Fetch 使用所选块的起始 PC 发起读取。",
+          "target": "ifu"
+        },
+        {
+          "id": "recovery",
+          "title": "Squash",
+          "sub": "丢弃错误路径",
+          "role": "internal",
+          "path": "src/cpu/pred/btb/ftq.cc:73",
+          "detail": "squashAfter 逐个移除年轻项，并把 fetchptr 置为保留目标 ID + 1。"
+        }
+      ],
+      "edges": [
+        {
+          "a": "bpu",
+          "b": "entries",
+          "label": "插入预测块",
+          "path": "src/cpu/pred/btb/ftq.cc:52"
+        },
+        {
+          "a": "entries",
+          "b": "cursor",
+          "label": "当前目标",
+          "path": "src/cpu/pred/btb/ftq.hh:56"
+        },
+        {
+          "a": "cursor",
+          "b": "ifu",
+          "label": "取指块起址",
+          "path": "src/cpu/o3/fetch.cc:3740"
+        },
+        {
+          "a": "bpu",
+          "b": "recovery",
+          "label": "控制流冲刷",
+          "path": "src/cpu/pred/btb/decoupled_bpred.cc:717"
+        },
+        {
+          "a": "recovery",
+          "b": "cursor",
+          "label": "修正取指游标",
+          "path": "src/cpu/pred/btb/ftq.cc:73"
+        }
+      ],
+      "streams": [
+        {
+          "name": "预测块供给",
+          "path": "src/cpu/pred/btb/decoupled_bpred.cc:1100",
+          "steps": [
+            {
+              "a": "bpu",
+              "b": "entries",
+              "type": "入队",
+              "text": "将 FetchTarget 追加到线程队列。"
+            },
+            {
+              "a": "entries",
+              "b": "cursor",
+              "type": "选择",
+              "text": "以当前 fetchptr 访问待取指目标。"
+            },
+            {
+              "a": "cursor",
+              "b": "ifu",
+              "type": "供给",
+              "text": "Fetch 读取预测块起始 PC。"
+            }
+          ]
+        },
+        {
+          "name": "FTQ 冲刷恢复",
+          "path": "src/cpu/pred/btb/ftq.cc:73",
+          "steps": [
+            {
+              "a": "bpu",
+              "b": "recovery",
+              "type": "冲刷",
+              "text": "预测器传入需要保留的目标 ID。"
+            },
+            {
+              "a": "recovery",
+              "b": "cursor",
+              "type": "恢复",
+              "text": "丢弃年轻目标，fetchptr 指向下一次取指的位置。"
+            }
+          ]
+        }
+      ],
+      "id": "ftq"
+    },
+    "ifu": {
+      "title": "IFU · 取指单元",
+      "rtl": "https://docs.xiangshan.cc/projects/design/zh-cn/kunminghu-v3/frontend/IFU/",
+      "mapping": "IFU 切分缓存返回的指令并完成预译码。O3 Fetch 持有地址翻译回调与 icachePort。",
+      "nodes": [
+        {
+          "id": "ftq",
+          "title": "FTQ",
+          "sub": "预测块输入",
+          "role": "up",
+          "path": "src/cpu/o3/fetch.cc:3740",
+          "detail": "提供当前块起始地址。",
+          "target": "ftq"
+        },
+        {
+          "id": "req",
+          "title": "Fetch request",
+          "sub": "构建取指请求",
+          "role": "internal",
+          "path": "src/cpu/o3/fetch.cc:864",
+          "detail": "按缓存行拆分取指缓冲区，每个 Request 携带 INST_FETCH 标志与请求编号。"
+        },
+        {
+          "id": "mmu",
+          "title": "MMU",
+          "sub": "Execute 翻译",
+          "role": "down",
+          "path": "src/cpu/o3/fetch.cc:898",
+          "detail": "ITLB 翻译完成后调用 FetchTranslation 的回调；翻译异常进入故障处理。",
+          "target": "mmu"
+        },
+        {
+          "id": "port",
+          "title": "ICache port",
+          "sub": "翻译回调与发包",
+          "role": "internal",
+          "path": "src/cpu/o3/fetch.cc:1370",
+          "detail": "成功翻译后构造 ReadReq；端口拒绝时等待重试。"
+        },
+        {
+          "id": "icache",
+          "title": "L1 I-Cache",
+          "sub": "指令字节",
+          "role": "down",
+          "path": "src/cpu/o3/fetch.cc:1410",
+          "detail": "读请求经 icachePort 送达指令缓存，响应从同一端口返回。",
+          "target": "icache"
+        },
+        {
+          "id": "pre",
+          "title": "Predecode",
+          "sub": "检查预测目标",
+          "role": "internal",
+          "path": "src/cpu/o3/fetch.cc:3155",
+          "detail": "收到取指数据后构建动态指令，预译码检查直接跳转目标、未预测跳转、返回和错误的非控制流预测。"
+        },
+        {
+          "id": "bpu",
+          "title": "BPU",
+          "sub": "纠正错误预测",
+          "role": "down",
+          "path": "src/cpu/o3/fetch.cc:3258",
+          "detail": "直接目标不匹配时 Fetch 通知 BPU 修复预测与 FTQ，并冲刷年轻取指状态。",
+          "target": "bpu"
+        },
+        {
+          "id": "decode",
+          "title": "Decode",
+          "sub": "动态指令输出",
+          "role": "down",
+          "path": "src/cpu/o3/fetch.cc:2137",
+          "detail": "推送已取到的动态指令给 Decode。",
+          "target": "decode"
+        }
+      ],
+      "edges": [
+        {
+          "a": "ftq",
+          "b": "req",
+          "label": "起始虚拟地址",
+          "path": "src/cpu/o3/fetch.cc:3769"
+        },
+        {
+          "a": "req",
+          "b": "mmu",
+          "label": "Execute 请求",
+          "path": "src/cpu/o3/fetch.cc:898"
+        },
+        {
+          "a": "mmu",
+          "b": "port",
+          "label": "翻译完成",
+          "path": "src/cpu/o3/fetch.cc:1504"
+        },
+        {
+          "a": "port",
+          "b": "icache",
+          "label": "ReadReq",
+          "path": "src/cpu/o3/fetch.cc:1410"
+        },
+        {
+          "a": "icache",
+          "b": "pre",
+          "label": "返回指令字节供构建与检查",
+          "path": "src/cpu/o3/fetch.cc:1030"
+        },
+        {
+          "a": "pre",
+          "b": "bpu",
+          "label": "预译码重定向",
+          "path": "src/cpu/o3/fetch.cc:3258"
+        },
+        {
+          "a": "pre",
+          "b": "decode",
+          "label": "送入译码",
+          "path": "src/cpu/o3/fetch.cc:2137"
+        }
+      ],
+      "streams": [
+        {
+          "name": "取指到译码",
+          "path": "src/cpu/o3/fetch.cc:3740",
+          "steps": [
+            {
+              "a": "ftq",
+              "b": "req",
+              "type": "供给",
+              "text": "取出预测块起始地址。"
+            },
+            {
+              "a": "req",
+              "b": "mmu",
+              "type": "请求",
+              "text": "为缓存行发起 Execute 翻译。"
+            },
+            {
+              "a": "mmu",
+              "b": "port",
+              "type": "响应",
+              "text": "成功回调，得到物理地址。"
+            },
+            {
+              "a": "port",
+              "b": "icache",
+              "type": "读取",
+              "text": "发送 ReadReq。"
+            },
+            {
+              "a": "icache",
+              "b": "pre",
+              "type": "取回",
+              "text": "收到数据后生成动态指令并检查预测。"
+            },
+            {
+              "a": "pre",
+              "b": "decode",
+              "type": "供给",
+              "text": "本次预测正确，前端向 Decode 供给指令。"
+            }
+          ]
+        },
+        {
+          "name": "直接跳转目标错误",
+          "path": "src/cpu/o3/fetch.cc:3217",
+          "steps": [
+            {
+              "a": "icache",
+              "b": "pre",
+              "type": "检查",
+              "text": "预译码比较直接控制流指令目标与预测目标。"
+            },
+            {
+              "a": "pre",
+              "b": "bpu",
+              "type": "重定向",
+              "text": "调用 controlSquash 纠正目标，清理年轻指令。"
+            }
+          ]
+        }
+      ],
+      "id": "ifu"
+    },
+    "icache": {
+      "title": "L1 I-Cache · 指令缓存",
+      "rtl": "https://docs.xiangshan.cc/projects/design/zh-cn/kunminghu-v3/frontend/ICache/",
+      "mapping": "RTL 描述 prefetchPipe、wayLookup、mainPipe 和缺失处理。经典缓存模型以 tag 查询、MSHR 与 timing port 表示访问和回填。",
+      "nodes": [
+        {
+          "id": "ifu",
+          "title": "IFU",
+          "sub": "物理地址读包",
+          "role": "up",
+          "path": "src/cpu/o3/fetch.cc:1385",
+          "detail": "Fetch 成功翻译后生成 ReadReq。",
+          "target": "ifu"
+        },
+        {
+          "id": "tag",
+          "title": "Tag lookup",
+          "sub": "查询缓存块",
+          "role": "internal",
+          "path": "src/mem/cache/base.cc:2048",
+          "detail": "查找标签并检查目标块是否满足本次读访问。"
+        },
+        {
+          "id": "reply",
+          "title": "Response",
+          "sub": "调度响应",
+          "role": "internal",
+          "path": "src/mem/cache/base.cc:410",
+          "detail": "命中后根据缓存延迟安排响应，回填后也会处理等待中的目标。"
+        },
+        {
+          "id": "mshr",
+          "title": "MSHR",
+          "sub": "记录与合并未命中",
+          "role": "internal",
+          "path": "src/mem/cache/base.cc:516",
+          "detail": "遇到已有缺失请求时可合并目标；新行未命中时分配 MSHR 并等待发往下级。"
+        },
+        {
+          "id": "memory",
+          "title": "下级缓存",
+          "sub": "内存侧端口",
+          "role": "down",
+          "path": "src/mem/cache/base.cc:2806",
+          "detail": "通过 memSidePort 向下级缓存层次请求缓存行，响应到达后进行回填。",
+          "target": "l2"
+        },
+        {
+          "id": "fill",
+          "title": "Refill",
+          "sub": "分配或填充缓存行",
+          "role": "internal",
+          "path": "src/mem/cache/base.cc:2365",
+          "detail": "使用下级响应填充缓存块，并服务原始请求。"
+        }
+      ],
+      "edges": [
+        {
+          "a": "ifu",
+          "b": "tag",
+          "label": "取指读请求",
+          "path": "src/mem/cache/base.cc:709"
+        },
+        {
+          "a": "tag",
+          "b": "reply",
+          "label": "读命中",
+          "path": "src/mem/cache/base.cc:410"
+        },
+        {
+          "a": "tag",
+          "b": "mshr",
+          "label": "新行缺失",
+          "path": "src/mem/cache/base.cc:516"
+        },
+        {
+          "a": "mshr",
+          "b": "memory",
+          "label": "请求缓存行",
+          "path": "src/mem/cache/base.cc:2806"
+        },
+        {
+          "a": "memory",
+          "b": "fill",
+          "label": "返回行数据",
+          "path": "src/mem/cache/base.cc:1018"
+        },
+        {
+          "a": "fill",
+          "b": "reply",
+          "label": "服务等待请求",
+          "path": "src/mem/cache/base.cc:1018"
+        },
+        {
+          "a": "reply",
+          "b": "ifu",
+          "label": "取指响应",
+          "path": "src/cpu/o3/fetch.cc:3855"
+        }
+      ],
+      "streams": [
+        {
+          "name": "指令缓存命中",
+          "path": "src/mem/cache/base.cc:410",
+          "steps": [
+            {
+              "a": "ifu",
+              "b": "tag",
+              "type": "请求",
+              "text": "查询已翻译地址的缓存块。"
+            },
+            {
+              "a": "tag",
+              "b": "reply",
+              "type": "命中",
+              "text": "有效且可读，命中该行。"
+            },
+            {
+              "a": "reply",
+              "b": "ifu",
+              "type": "响应",
+              "text": "取指端口收到数据。"
+            }
+          ]
+        },
+        {
+          "name": "指令缓存缺失与回填",
+          "path": "src/mem/cache/base.cc:516",
+          "steps": [
+            {
+              "a": "ifu",
+              "b": "tag",
+              "type": "请求",
+              "text": "用物理地址查找缓存块。"
+            },
+            {
+              "a": "tag",
+              "b": "mshr",
+              "type": "缺失",
+              "text": "此例为新缺失，记录等待目标。"
+            },
+            {
+              "a": "mshr",
+              "b": "memory",
+              "type": "读取",
+              "text": "向下级请求缺失的缓存行。"
+            },
+            {
+              "a": "memory",
+              "b": "fill",
+              "type": "回填",
+              "text": "收到行数据并填充缓存。"
+            },
+            {
+              "a": "fill",
+              "b": "reply",
+              "type": "唤醒",
+              "text": "服务原始取指请求。"
+            },
+            {
+              "a": "reply",
+              "b": "ifu",
+              "type": "响应",
+              "text": "数据返回取指端口。"
+            }
+          ]
+        }
+      ],
+      "id": "icache"
+    },
+    "decode": {
+      "title": "Decode · 译码",
+      "rtl": "https://docs.xiangshan.cc/projects/design/zh-cn/kunminghu-v3/backend/CtrlBlock/decode/",
+      "mapping": "Decode 从 Fetch 接收 DynInst，检查控制流并向 Rename 发送译码结果。",
+      "nodes": [
+        {
+          "id": "ifu",
+          "title": "IFU",
+          "sub": "动态指令输入",
+          "role": "up",
+          "path": "src/cpu/o3/decode.cc:1186",
+          "detail": "Fetch 将指令送至 Decode。",
+          "target": "ifu"
+        },
+        {
+          "id": "input",
+          "title": "译码窗口",
+          "sub": "按序处理",
+          "role": "internal",
+          "path": "src/cpu/o3/decode.cc:1227",
+          "detail": "按线程取可用指令，跳过已 squash 的项，受译码带宽和下游反压限制。"
+        },
+        {
+          "id": "check",
+          "title": "控制流检查",
+          "sub": "分支类型 / 目标",
+          "role": "internal",
+          "path": "src/cpu/o3/decode.cc:1330",
+          "detail": "对符合条件且未经预译码检查的指令校验分支预测。"
+        },
+        {
+          "id": "rename",
+          "title": "Rename",
+          "sub": "译码输出",
+          "role": "down",
+          "path": "src/cpu/o3/decode.cc:1291",
+          "detail": "动态指令进入 toRename 缓冲。",
+          "target": "rename"
+        },
+        {
+          "id": "redirect",
+          "title": "Fetch redirect",
+          "sub": "校正取指目标",
+          "role": "down",
+          "path": "src/cpu/o3/decode.cc:1399",
+          "detail": "selfSquash 通知前端恢复。",
+          "target": "ifu"
+        }
+      ],
+      "edges": [
+        {
+          "a": "ifu",
+          "b": "input",
+          "label": "DynInst",
+          "path": "src/cpu/o3/decode.cc:1186",
+          "type": "request",
+          "text": "取出经过 fetchToDecodeDelay 后到达 Decode 的当前线程指令。"
+        },
+        {
+          "a": "input",
+          "b": "check",
+          "label": "预测信息",
+          "path": "src/cpu/o3/decode.cc:1330",
+          "type": "request",
+          "text": "检查待处理指令是否需要校正预测。"
+        },
+        {
+          "a": "check",
+          "b": "rename",
+          "label": "toRename",
+          "path": "src/cpu/o3/decode.cc:1291",
+          "type": "response",
+          "text": "控制流检查通过，继续向 Rename 传递。"
+        },
+        {
+          "a": "check",
+          "b": "redirect",
+          "label": "selfSquash",
+          "path": "src/cpu/o3/decode.cc:1399",
+          "type": "redirect",
+          "text": "未经预译码检查的直接分支目标不匹配，发出恢复请求。"
+        }
+      ],
+      "streams": [
+        {
+          "name": "译码至重命名",
+          "path": "src/cpu/o3/decode.cc:1186",
+          "steps": [
+            {
+              "a": "ifu",
+              "b": "input",
+              "label": "DynInst",
+              "path": "src/cpu/o3/decode.cc:1186",
+              "type": "request",
+              "text": "取出经过 fetchToDecodeDelay 后到达 Decode 的当前线程指令。"
+            },
+            {
+              "a": "input",
+              "b": "check",
+              "label": "预测信息",
+              "path": "src/cpu/o3/decode.cc:1330",
+              "type": "request",
+              "text": "检查待处理指令是否需要校正预测。"
+            },
+            {
+              "a": "check",
+              "b": "rename",
+              "label": "toRename",
+              "path": "src/cpu/o3/decode.cc:1291",
+              "type": "response",
+              "text": "控制流检查通过，继续向 Rename 传递。"
+            }
+          ]
+        },
+        {
+          "name": "直接分支目标校正",
+          "path": "src/cpu/o3/decode.cc:1186",
+          "steps": [
+            {
+              "a": "ifu",
+              "b": "input",
+              "label": "DynInst",
+              "path": "src/cpu/o3/decode.cc:1186",
+              "type": "request",
+              "text": "取出经过 fetchToDecodeDelay 后到达 Decode 的当前线程指令。"
+            },
+            {
+              "a": "input",
+              "b": "check",
+              "label": "预测信息",
+              "path": "src/cpu/o3/decode.cc:1330",
+              "type": "request",
+              "text": "检查待处理指令是否需要校正预测。"
+            },
+            {
+              "a": "check",
+              "b": "redirect",
+              "label": "selfSquash",
+              "path": "src/cpu/o3/decode.cc:1399",
+              "type": "redirect",
+              "text": "未经预译码检查的直接分支目标不匹配，发出恢复请求。"
+            }
+          ]
+        }
+      ],
+      "id": "decode"
+    },
+    "rename": {
+      "title": "Rename · 寄存器重命名",
+      "rtl": "https://docs.xiangshan.cc/projects/design/zh-cn/kunminghu-v3/backend/CtrlBlock/Rename/",
+      "mapping": "RTL 对照 RAT 和 FreeList。模型通过推测映射、物理寄存器分配和恢复记录实现重命名。",
+      "nodes": [
+        {
+          "id": "decode",
+          "title": "Decode",
+          "sub": "逻辑寄存器",
+          "role": "up",
+          "path": "src/cpu/o3/rename.cc:737",
+          "detail": "读取译码后的动态指令。",
+          "target": "decode"
+        },
+        {
+          "id": "map",
+          "title": "Rename map",
+          "sub": "源寄存器查表",
+          "role": "internal",
+          "path": "src/cpu/o3/rename.cc:1125",
+          "detail": "读取源操作数当前对应的物理寄存器。"
+        },
+        {
+          "id": "alloc",
+          "title": "目的分配",
+          "sub": "映射更新 / 历史",
+          "role": "internal",
+          "path": "src/cpu/o3/rename.cc:1193",
+          "detail": "普通写目的寄存器的操作记录新旧映射，供提交或失误恢复。"
+        },
+        {
+          "id": "dispatch",
+          "title": "Dispatch",
+          "sub": "物理寄存器标签",
+          "role": "down",
+          "path": "src/cpu/o3/iew.cc:1760",
+          "detail": "分派逻辑接收重命名后的 DynInst。",
+          "target": "dispatch"
+        },
+        {
+          "id": "commit",
+          "title": "Commit",
+          "sub": "squash 边界",
+          "role": "up",
+          "path": "src/cpu/o3/rename.cc:385",
+          "detail": "提交阶段通知恢复边界。",
+          "target": "commit"
+        }
+      ],
+      "edges": [
+        {
+          "a": "decode",
+          "b": "map",
+          "label": "源寄存器",
+          "path": "src/cpu/o3/rename.cc:1125",
+          "type": "request",
+          "text": "按架构寄存器号查询推测映射。"
+        },
+        {
+          "a": "map",
+          "b": "alloc",
+          "label": "物理源标签",
+          "path": "src/cpu/o3/rename.cc:1193",
+          "type": "request",
+          "text": "对一般整数运算分配新的物理目的寄存器。"
+        },
+        {
+          "a": "alloc",
+          "b": "dispatch",
+          "label": "DynInst",
+          "path": "src/cpu/o3/iew.cc:1760",
+          "type": "response",
+          "text": "携带新目的标签进入分派。"
+        },
+        {
+          "a": "commit",
+          "b": "alloc",
+          "label": "squash 边界",
+          "path": "src/cpu/o3/rename.cc:385",
+          "type": "redirect",
+          "text": "接收错误路径的恢复序号。"
+        },
+        {
+          "a": "alloc",
+          "b": "map",
+          "label": "回滚映射",
+          "path": "src/cpu/o3/rename.cc:962",
+          "type": "response",
+          "text": "按 squash 范围撤销年轻指令建立的推测映射。"
+        }
+      ],
+      "streams": [
+        {
+          "name": "整数指令重命名",
+          "path": "src/cpu/o3/rename.cc:1125",
+          "steps": [
+            {
+              "a": "decode",
+              "b": "map",
+              "label": "源寄存器",
+              "path": "src/cpu/o3/rename.cc:1125",
+              "type": "request",
+              "text": "按架构寄存器号查询推测映射。"
+            },
+            {
+              "a": "map",
+              "b": "alloc",
+              "label": "物理源标签",
+              "path": "src/cpu/o3/rename.cc:1193",
+              "type": "request",
+              "text": "对一般整数运算分配新的物理目的寄存器。"
+            },
+            {
+              "a": "alloc",
+              "b": "dispatch",
+              "label": "DynInst",
+              "path": "src/cpu/o3/iew.cc:1760",
+              "type": "response",
+              "text": "携带新目的标签进入分派。"
+            }
+          ]
+        },
+        {
+          "name": "错误路径恢复",
+          "path": "src/cpu/o3/rename.cc:385",
+          "steps": [
+            {
+              "a": "commit",
+              "b": "alloc",
+              "label": "squash 边界",
+              "path": "src/cpu/o3/rename.cc:385",
+              "type": "redirect",
+              "text": "接收错误路径的恢复序号。"
+            },
+            {
+              "a": "alloc",
+              "b": "map",
+              "label": "回滚映射",
+              "path": "src/cpu/o3/rename.cc:962",
+              "type": "response",
+              "text": "按 squash 范围撤销年轻指令建立的推测映射。"
+            }
+          ]
+        }
+      ],
+      "id": "rename"
+    },
+    "dispatch": {
+      "title": "Dispatch · 指令分派",
+      "rtl": "https://docs.xiangshan.cc/projects/design/zh-cn/kunminghu-v3/backend/CtrlBlock/Dispatch/",
+      "mapping": "IEW 按指令类型检查队列容量和入口带宽。配置决定指令经过独立分派队列还是直接从 Rename 分派。",
+      "nodes": [
+        {
+          "id": "rename",
+          "title": "Rename",
+          "sub": "输入 / 反压",
+          "role": "up",
+          "path": "src/cpu/o3/iew.cc:1714",
+          "detail": "同一重命名输出也由 Commit 取得以分配 ROB 项。",
+          "target": "rename"
+        },
+        {
+          "id": "admit",
+          "title": "资源准入",
+          "sub": "LSQ / IQ 余量",
+          "role": "internal",
+          "path": "src/cpu/o3/iew.cc:1806",
+          "detail": "Load 检查 LQ，Store/Atomic 检查 SQ；scheduler->ready 检查队列容量和入口带宽。"
+        },
+        {
+          "id": "select",
+          "title": "队列选择",
+          "sub": "操作类型 / 端口",
+          "role": "internal",
+          "path": "configs/common/FUScheduler.py:187",
+          "detail": "KMHV3Scheduler 按指令类型和端口选择可用的发射队列。"
+        },
+        {
+          "id": "iew",
+          "title": "Issue Queue",
+          "sub": "发射队列入口",
+          "role": "down",
+          "path": "src/cpu/o3/iew.cc:1943",
+          "detail": "一般指令插入 IQ，屏障和非推测指令走特殊路径。",
+          "target": "iew"
+        },
+        {
+          "id": "lsu",
+          "title": "LSQ",
+          "sub": "访存队列分配",
+          "role": "down",
+          "path": "src/cpu/o3/lsq_unit.cc:786",
+          "detail": "Load / Store 分派时分别占用 LQ / SQ 项。",
+          "target": "lsu"
+        }
+      ],
+      "edges": [
+        {
+          "a": "rename",
+          "b": "admit",
+          "label": "重命名结果",
+          "path": "src/cpu/o3/iew.cc:1714",
+          "type": "request",
+          "text": "独立分派级关闭时，IEW 直接接收 Rename 的输出。"
+        },
+        {
+          "a": "admit",
+          "b": "select",
+          "label": "准入通过",
+          "path": "src/cpu/o3/iew.cc:1831",
+          "type": "request",
+          "text": "调度器检查本组指令的目标队列。"
+        },
+        {
+          "a": "select",
+          "b": "iew",
+          "label": "IQ 入队",
+          "path": "src/cpu/o3/iew.cc:1943",
+          "type": "response",
+          "text": "普通指令进入指令队列，等待源操作数就绪。"
+        },
+        {
+          "a": "admit",
+          "b": "lsu",
+          "label": "LQ 分配",
+          "path": "src/cpu/o3/lsq_unit.cc:786",
+          "type": "request",
+          "text": "为获准分派的 Load 预留 LQ 项。"
+        },
+        {
+          "a": "admit",
+          "b": "rename",
+          "label": "blockRename",
+          "path": "src/cpu/o3/iew.cc:1721",
+          "type": "stall",
+          "text": "本线程还有未分派指令，向 Rename 返回停顿原因。"
+        }
+      ],
+      "streams": [
+        {
+          "name": "普通指令入队",
+          "path": "src/cpu/o3/iew.cc:1714",
+          "steps": [
+            {
+              "a": "rename",
+              "b": "admit",
+              "label": "重命名结果",
+              "path": "src/cpu/o3/iew.cc:1714",
+              "type": "request",
+              "text": "独立分派级关闭时，IEW 直接接收 Rename 的输出。"
+            },
+            {
+              "a": "admit",
+              "b": "select",
+              "label": "准入通过",
+              "path": "src/cpu/o3/iew.cc:1831",
+              "type": "request",
+              "text": "调度器检查本组指令的目标队列。"
+            },
+            {
+              "a": "select",
+              "b": "iew",
+              "label": "IQ 入队",
+              "path": "src/cpu/o3/iew.cc:1943",
+              "type": "response",
+              "text": "普通指令进入指令队列，等待源操作数就绪。"
+            }
+          ]
+        },
+        {
+          "name": "Load 分配队列",
+          "path": "src/cpu/o3/iew.cc:1714",
+          "steps": [
+            {
+              "a": "rename",
+              "b": "admit",
+              "label": "重命名结果",
+              "path": "src/cpu/o3/iew.cc:1714",
+              "type": "request",
+              "text": "独立分派级关闭时，IEW 直接接收 Rename 的输出。"
+            },
+            {
+              "a": "admit",
+              "b": "lsu",
+              "label": "LQ 分配",
+              "path": "src/cpu/o3/lsq_unit.cc:786",
+              "type": "request",
+              "text": "为获准分派的 Load 预留 LQ 项。"
+            }
+          ]
+        },
+        {
+          "name": "资源不足反压",
+          "path": "src/cpu/o3/iew.cc:1714",
+          "steps": [
+            {
+              "a": "rename",
+              "b": "admit",
+              "label": "重命名结果",
+              "path": "src/cpu/o3/iew.cc:1714",
+              "type": "request",
+              "text": "独立分派级关闭时，IEW 直接接收 Rename 的输出。"
+            },
+            {
+              "a": "admit",
+              "b": "rename",
+              "label": "blockRename",
+              "path": "src/cpu/o3/iew.cc:1721",
+              "type": "stall",
+              "text": "本线程还有未分派指令，向 Rename 返回停顿原因。"
+            }
+          ]
+        }
+      ],
+      "id": "dispatch"
+    },
+    "iew": {
+      "title": "IEW · 发射、执行与写回",
+      "rtl": "https://docs.xiangshan.cc/projects/design/zh-cn/kunminghu-v3/backend/Schedule_And_Issue/Scheduler/",
+      "mapping": "RTL 的调度、执行和写回在模型中由 Scheduler、IssueQue 与 IEW 协作；分支执行结果可触发提交阶段的恢复。",
+      "nodes": [
+        {
+          "id": "dispatch",
+          "title": "Dispatch",
+          "sub": "已分派指令",
+          "role": "up",
+          "path": "src/cpu/o3/iew.cc:1943",
+          "detail": "提供已通过资源检查的动态指令。",
+          "target": "dispatch"
+        },
+        {
+          "id": "iq",
+          "title": "Issue Queue",
+          "sub": "依赖 / 就绪选择",
+          "role": "internal",
+          "path": "src/cpu/o3/issue_queue.cc:1214",
+          "detail": "根据源操作数就绪状态和可用输出端口选择候选指令。"
+        },
+        {
+          "id": "fu",
+          "title": "Execute",
+          "sub": "功能单元",
+          "role": "internal",
+          "path": "src/cpu/o3/iew.cc:2450",
+          "detail": "一般指令执行计算，访存指令进入 LSU，控制流指令可发现误预测。"
+        },
+        {
+          "id": "wb",
+          "title": "Writeback",
+          "sub": "完成 / 唤醒",
+          "role": "internal",
+          "path": "src/cpu/o3/iew.cc:2622",
+          "detail": "写回阶段处理执行完成的指令并唤醒依赖者。"
+        },
+        {
+          "id": "commit",
+          "title": "Commit",
+          "sub": "完成 / 恢复请求",
+          "role": "down",
+          "path": "src/cpu/o3/commit.cc:2803",
+          "detail": "标记可提交，或处理 IEW 发来的 squash。",
+          "target": "commit"
+        },
+        {
+          "id": "lsu",
+          "title": "LSU",
+          "sub": "访存执行",
+          "role": "down",
+          "path": "src/cpu/o3/iew.cc:2450",
+          "detail": "由 Load/Store 执行路径处理访存访问。",
+          "target": "lsu"
+        }
+      ],
+      "edges": [
+        {
+          "a": "dispatch",
+          "b": "iq",
+          "label": "入队",
+          "path": "src/cpu/o3/iew.cc:1943",
+          "type": "request",
+          "text": "一般指令经 instQueue.insert 插入合适的发射队列。"
+        },
+        {
+          "a": "iq",
+          "b": "fu",
+          "label": "就绪指令",
+          "path": "src/cpu/o3/issue_queue.cc:2396",
+          "type": "request",
+          "text": "IssueQue 选择就绪项；Scheduler 向执行单元提供获准发射的指令。"
+        },
+        {
+          "a": "fu",
+          "b": "wb",
+          "label": "执行结果",
+          "path": "src/cpu/o3/iew.cc:2622",
+          "type": "response",
+          "text": "结果到达写回阶段。"
+        },
+        {
+          "a": "wb",
+          "b": "commit",
+          "label": "完成标记",
+          "path": "src/cpu/o3/commit.cc:2803",
+          "type": "response",
+          "text": "Commit 对未取消的完成指令设置 canCommit。"
+        },
+        {
+          "a": "fu",
+          "b": "commit",
+          "label": "squash",
+          "path": "src/cpu/o3/iew.cc:968",
+          "type": "redirect",
+          "text": "执行结果与预测不一致，向 Commit 提交目标 PC 和恢复边界。"
+        },
+        {
+          "a": "fu",
+          "b": "lsu",
+          "label": "执行访存",
+          "path": "src/cpu/o3/iew.cc:2450",
+          "type": "request",
+          "text": "执行 Load/Store 地址和数据访问流程。"
+        }
+      ],
+      "streams": [
+        {
+          "name": "ALU 执行与写回",
+          "path": "src/cpu/o3/iew.cc:1943",
+          "steps": [
+            {
+              "a": "dispatch",
+              "b": "iq",
+              "label": "入队",
+              "path": "src/cpu/o3/iew.cc:1943",
+              "type": "request",
+              "text": "一般指令经 instQueue.insert 插入合适的发射队列。"
+            },
+            {
+              "a": "iq",
+              "b": "fu",
+              "label": "就绪指令",
+              "path": "src/cpu/o3/issue_queue.cc:2396",
+              "type": "request",
+              "text": "IssueQue 选择就绪项；Scheduler 向执行单元提供获准发射的指令。"
+            },
+            {
+              "a": "fu",
+              "b": "wb",
+              "label": "执行结果",
+              "path": "src/cpu/o3/iew.cc:2622",
+              "type": "response",
+              "text": "结果到达写回阶段。"
+            },
+            {
+              "a": "wb",
+              "b": "commit",
+              "label": "完成标记",
+              "path": "src/cpu/o3/commit.cc:2803",
+              "type": "response",
+              "text": "Commit 对未取消的完成指令设置 canCommit。"
+            }
+          ]
+        },
+        {
+          "name": "分支误预测",
+          "path": "src/cpu/o3/iew.cc:1943",
+          "steps": [
+            {
+              "a": "dispatch",
+              "b": "iq",
+              "label": "入队",
+              "path": "src/cpu/o3/iew.cc:1943",
+              "type": "request",
+              "text": "一般指令经 instQueue.insert 插入合适的发射队列。"
+            },
+            {
+              "a": "iq",
+              "b": "fu",
+              "label": "就绪指令",
+              "path": "src/cpu/o3/issue_queue.cc:2396",
+              "type": "request",
+              "text": "IssueQue 选择就绪项；Scheduler 向执行单元提供获准发射的指令。"
+            },
+            {
+              "a": "fu",
+              "b": "commit",
+              "label": "squash",
+              "path": "src/cpu/o3/iew.cc:968",
+              "type": "redirect",
+              "text": "执行结果与预测不一致，向 Commit 提交目标 PC 和恢复边界。"
+            }
+          ]
+        },
+        {
+          "name": "访存发射",
+          "path": "src/cpu/o3/iew.cc:1943",
+          "steps": [
+            {
+              "a": "dispatch",
+              "b": "iq",
+              "label": "入队",
+              "path": "src/cpu/o3/iew.cc:1943",
+              "type": "request",
+              "text": "一般指令经 instQueue.insert 插入合适的发射队列。"
+            },
+            {
+              "a": "iq",
+              "b": "fu",
+              "label": "就绪指令",
+              "path": "src/cpu/o3/issue_queue.cc:2396",
+              "type": "request",
+              "text": "IssueQue 选择就绪项；Scheduler 向执行单元提供获准发射的指令。"
+            },
+            {
+              "a": "fu",
+              "b": "lsu",
+              "label": "执行访存",
+              "path": "src/cpu/o3/iew.cc:2450",
+              "type": "request",
+              "text": "执行 Load/Store 地址和数据访问流程。"
+            }
+          ]
+        }
+      ],
+      "id": "iew"
+    },
+    "commit": {
+      "title": "Commit · 顺序提交",
+      "rtl": "https://docs.xiangshan.cc/projects/design/zh-cn/kunminghu-v3/backend/CtrlBlock/Rob/",
+      "mapping": "ROB 按程序顺序保存动态指令。Commit 检查就绪状态、处理异常和恢复，并按提交带宽退休指令。",
+      "nodes": [
+        {
+          "id": "rename",
+          "title": "Rename",
+          "sub": "顺序分配",
+          "role": "up",
+          "path": "src/cpu/o3/commit.cc:2569",
+          "detail": "Commit 读取 Rename 输出并插入 ROB。",
+          "target": "rename"
+        },
+        {
+          "id": "iew",
+          "title": "IEW",
+          "sub": "写回 / 重定向",
+          "role": "up",
+          "path": "src/cpu/o3/commit.cc:2803",
+          "detail": "接收写回完成或分支纠错消息。",
+          "target": "iew"
+        },
+        {
+          "id": "rob",
+          "title": "ROB",
+          "sub": "顺序队首",
+          "role": "internal",
+          "path": "src/cpu/o3/commit.cc:2738",
+          "detail": "维护程序顺序以及各项的可提交状态。"
+        },
+        {
+          "id": "retire",
+          "title": "队首提交",
+          "sub": "按序退休",
+          "role": "internal",
+          "path": "src/cpu/o3/commit.cc:2129",
+          "detail": "检查队首状态和 fault；成功后推进已提交边界。"
+        },
+        {
+          "id": "trap",
+          "title": "异常与冲刷",
+          "sub": "精确异常 / squash",
+          "role": "internal",
+          "path": "src/cpu/o3/commit.cc:2264",
+          "detail": "队首指令携带异常时调用 cpu->trap，随后清除受影响的在途指令。"
+        },
+        {
+          "id": "ifu",
+          "title": "Fetch",
+          "sub": "重定向 PC",
+          "role": "down",
+          "path": "src/cpu/o3/commit.cc:1360",
+          "detail": "Fetch 根据 Commit 广播的 PC 和序号恢复。",
+          "target": "ifu"
+        },
+        {
+          "id": "lsu",
+          "title": "LSU",
+          "sub": "提交边界",
+          "role": "down",
+          "path": "src/cpu/o3/lsq.cc:1639",
+          "detail": "提交进度允许 LSQ 推进更老的 Store。",
+          "target": "lsu"
+        }
+      ],
+      "edges": [
+        {
+          "a": "rename",
+          "b": "rob",
+          "label": "ROB 分配",
+          "path": "src/cpu/o3/commit.cc:2738",
+          "type": "request",
+          "text": "将重命名后的指令按程序顺序插入 ROB。"
+        },
+        {
+          "a": "iew",
+          "b": "rob",
+          "label": "完成",
+          "path": "src/cpu/o3/commit.cc:2817",
+          "type": "response",
+          "text": "写回使该项具备提交资格。"
+        },
+        {
+          "a": "rob",
+          "b": "retire",
+          "label": "队首检查",
+          "path": "src/cpu/o3/commit.cc:2129",
+          "type": "request",
+          "text": "检查最老指令的执行结果。"
+        },
+        {
+          "a": "retire",
+          "b": "lsu",
+          "label": "提交进度",
+          "path": "src/cpu/o3/commit.cc:2065",
+          "type": "response",
+          "text": "更新访存提交序号，使较老 Store 可以推进。"
+        },
+        {
+          "a": "retire",
+          "b": "trap",
+          "label": "trap",
+          "path": "src/cpu/o3/commit.cc:2264",
+          "type": "fault",
+          "text": "满足异常处理条件时进入架构 trap。"
+        },
+        {
+          "a": "trap",
+          "b": "ifu",
+          "label": "恢复 PC",
+          "path": "src/cpu/o3/commit.cc:879",
+          "type": "redirect",
+          "text": "squashFromTrap 发起恢复，从异常入口重新取指。"
+        },
+        {
+          "a": "iew",
+          "b": "trap",
+          "label": "squash 请求",
+          "path": "src/cpu/o3/commit.cc:1219",
+          "type": "redirect",
+          "text": "Commit 选择有效的分支恢复请求。"
+        }
+      ],
+      "streams": [
+        {
+          "name": "顺序退休",
+          "path": "src/cpu/o3/commit.cc:2738",
+          "steps": [
+            {
+              "a": "rename",
+              "b": "rob",
+              "label": "ROB 分配",
+              "path": "src/cpu/o3/commit.cc:2738",
+              "type": "request",
+              "text": "将重命名后的指令按程序顺序插入 ROB。"
+            },
+            {
+              "a": "iew",
+              "b": "rob",
+              "label": "完成",
+              "path": "src/cpu/o3/commit.cc:2817",
+              "type": "response",
+              "text": "写回使该项具备提交资格。"
+            },
+            {
+              "a": "rob",
+              "b": "retire",
+              "label": "队首检查",
+              "path": "src/cpu/o3/commit.cc:2129",
+              "type": "request",
+              "text": "检查最老指令的执行结果。"
+            },
+            {
+              "a": "retire",
+              "b": "lsu",
+              "label": "提交进度",
+              "path": "src/cpu/o3/commit.cc:2065",
+              "type": "response",
+              "text": "更新访存提交序号，使较老 Store 可以推进。"
+            }
+          ]
+        },
+        {
+          "name": "队首精确异常",
+          "path": "src/cpu/o3/commit.cc:2195",
+          "steps": [
+            {
+              "a": "rob",
+              "b": "retire",
+              "label": "队首检查",
+              "path": "src/cpu/o3/commit.cc:2195",
+              "type": "request",
+              "text": "读取队首指令保存的 Fault。"
+            },
+            {
+              "a": "retire",
+              "b": "trap",
+              "label": "trap",
+              "path": "src/cpu/o3/commit.cc:2264",
+              "type": "fault",
+              "text": "满足异常处理条件时进入架构 trap。"
+            },
+            {
+              "a": "trap",
+              "b": "ifu",
+              "label": "恢复 PC",
+              "path": "src/cpu/o3/commit.cc:879",
+              "type": "redirect",
+              "text": "squashFromTrap 发起恢复，从异常入口重新取指。"
+            }
+          ]
+        },
+        {
+          "name": "误预测恢复",
+          "path": "src/cpu/o3/commit.cc:1219",
+          "steps": [
+            {
+              "a": "iew",
+              "b": "trap",
+              "label": "squash 请求",
+              "path": "src/cpu/o3/commit.cc:1219",
+              "type": "redirect",
+              "text": "Commit 选择有效的分支恢复请求。"
+            },
+            {
+              "a": "trap",
+              "b": "ifu",
+              "label": "校正 PC",
+              "path": "src/cpu/o3/commit.cc:1360",
+              "type": "redirect",
+              "text": "广播正确的 PC 和恢复边界。"
+            }
+          ]
+        }
+      ],
+      "id": "commit"
+    },
+    "lsu": {
+      "title": "LSU · 加载与存储",
+      "rtl": "https://docs.xiangshan.cc/projects/design/zh-cn/kunminghu-v3/memblock/LSU/LSQ/",
+      "mapping": "LQ、SQ、RAR、RAW 与 SBuffer 对应模型中的 LSQ 和 LSQUnit，处理地址翻译、数据访问、重放与已提交存储。",
+      "nodes": [
+        {
+          "id": "iew",
+          "title": "IEW",
+          "sub": "访存执行",
+          "role": "up",
+          "path": "src/cpu/o3/iew.cc:2450",
+          "detail": "发射后启动 Load 或 Store 执行。",
+          "target": "iew"
+        },
+        {
+          "id": "lq",
+          "title": "Load Queue",
+          "sub": "Load Queue · RAR / RAW",
+          "role": "internal",
+          "path": "src/cpu/o3/lsq_unit.cc:3444",
+          "detail": "检查相关 Store 的转发以及访存顺序，无法转发的普通 Load 发送缓存请求。"
+        },
+        {
+          "id": "sq",
+          "title": "Store Queue",
+          "sub": "Store Queue · 提交门控",
+          "role": "internal",
+          "path": "src/cpu/o3/lsq_unit.cc:2251",
+          "detail": "已执行 Store 需满足提交条件才能继续写入缓存层次。"
+        },
+        {
+          "id": "sb",
+          "title": "Store Buffer",
+          "sub": "合并写入",
+          "role": "internal",
+          "path": "src/cpu/o3/lsq_unit.cc:2567",
+          "detail": "接收普通可缓存 Store 的待写数据，根据逐出策略向缓存发送。"
+        },
+        {
+          "id": "replay",
+          "title": "RAR / RAW Replay",
+          "sub": "违例检查资源等待",
+          "role": "internal",
+          "path": "src/cpu/o3/lsq_unit.cc:4082",
+          "detail": "检查资源恢复或完成边界推进后，按带宽取出等待的 Load，交回 IssueQue 重试。"
+        },
+        {
+          "id": "commit",
+          "title": "Commit",
+          "sub": "已退休序号",
+          "role": "up",
+          "path": "src/cpu/o3/lsq.cc:1639",
+          "detail": "通知可提交的 Store 边界。",
+          "target": "commit"
+        },
+        {
+          "id": "mmu",
+          "title": "MMU",
+          "sub": "Read / Write 翻译",
+          "role": "down",
+          "path": "src/cpu/o3/lsq.cc:3917",
+          "detail": "LSQ 发起 translateTiming，经回调取得物理地址或 Fault。",
+          "target": "mmu"
+        },
+        {
+          "id": "dcache",
+          "title": "D-Cache",
+          "sub": "物理地址访问",
+          "role": "down",
+          "path": "src/cpu/o3/lsq.cc:4231",
+          "detail": "缓存端口接收访问并返回数据。",
+          "target": "dcache"
+        }
+      ],
+      "edges": [
+        {
+          "a": "iew",
+          "b": "lq",
+          "label": "Load 执行",
+          "path": "src/cpu/o3/lsq_unit.cc:3444",
+          "type": "request",
+          "text": "执行已分配 LQ 项的普通标量 Load。"
+        },
+        {
+          "a": "lq",
+          "b": "mmu",
+          "label": "Read 翻译",
+          "path": "src/cpu/o3/lsq.cc:3917",
+          "type": "request",
+          "text": "提交单段 Load 的虚拟地址。"
+        },
+        {
+          "a": "mmu",
+          "b": "lq",
+          "label": "翻译完成",
+          "path": "src/cpu/o3/lsq.cc:3489",
+          "type": "response",
+          "text": "成功回调记录翻译状态和物理地址。"
+        },
+        {
+          "a": "lq",
+          "b": "dcache",
+          "label": "读取数据",
+          "path": "src/cpu/o3/lsq_unit.cc:3983",
+          "type": "request",
+          "text": "未获完整转发，向 D-Cache 发包。"
+        },
+        {
+          "a": "dcache",
+          "b": "lq",
+          "label": "数据返回",
+          "path": "src/cpu/o3/lsq_unit.cc:296",
+          "type": "response",
+          "text": "completeDataAccess 处理返回的数据。"
+        },
+        {
+          "a": "lq",
+          "b": "replay",
+          "label": "RAR 资源等待",
+          "path": "src/cpu/o3/lsq_unit.cc:1642",
+          "type": "stall",
+          "text": "本次 Load 需要等待 RAR 检查资源，按程序顺序记录。"
+        },
+        {
+          "a": "replay",
+          "b": "iew",
+          "label": "retryMem",
+          "path": "src/cpu/o3/lsq_unit.cc:4159",
+          "type": "replay",
+          "text": "可再次执行时清除重放标记，通知所属发射队列。"
+        },
+        {
+          "a": "commit",
+          "b": "sq",
+          "label": "提交授权",
+          "path": "src/cpu/o3/lsq_unit.cc:2251",
+          "type": "request",
+          "text": "允许不晚于提交边界的 Store 继续。"
+        },
+        {
+          "a": "sq",
+          "b": "sb",
+          "label": "缓冲写入",
+          "path": "src/cpu/o3/lsq_unit.cc:2567",
+          "type": "request",
+          "text": "普通可缓存 Store 进入 SBuffer。"
+        },
+        {
+          "a": "sb",
+          "b": "dcache",
+          "label": "写数据",
+          "path": "src/cpu/o3/lsq.cc:4216",
+          "type": "request",
+          "text": "选中待逐出项后向缓存发送写请求。"
+        }
+      ],
+      "streams": [
+        {
+          "name": "普通 Load 读取",
+          "path": "src/cpu/o3/lsq_unit.cc:3444",
+          "steps": [
+            {
+              "a": "iew",
+              "b": "lq",
+              "label": "Load 执行",
+              "path": "src/cpu/o3/lsq_unit.cc:3444",
+              "type": "request",
+              "text": "执行已分配 LQ 项的普通标量 Load。"
+            },
+            {
+              "a": "lq",
+              "b": "mmu",
+              "label": "Read 翻译",
+              "path": "src/cpu/o3/lsq.cc:3917",
+              "type": "request",
+              "text": "提交单段 Load 的虚拟地址。"
+            },
+            {
+              "a": "mmu",
+              "b": "lq",
+              "label": "翻译完成",
+              "path": "src/cpu/o3/lsq.cc:3489",
+              "type": "response",
+              "text": "成功回调记录翻译状态和物理地址。"
+            },
+            {
+              "a": "lq",
+              "b": "dcache",
+              "label": "读取数据",
+              "path": "src/cpu/o3/lsq_unit.cc:3983",
+              "type": "request",
+              "text": "未获完整转发，向 D-Cache 发包。"
+            },
+            {
+              "a": "dcache",
+              "b": "lq",
+              "label": "数据返回",
+              "path": "src/cpu/o3/lsq_unit.cc:296",
+              "type": "response",
+              "text": "completeDataAccess 处理返回的数据。"
+            }
+          ]
+        },
+        {
+          "name": "RAR 等待与重发",
+          "path": "src/cpu/o3/lsq_unit.cc:1642",
+          "steps": [
+            {
+              "a": "lq",
+              "b": "replay",
+              "label": "RAR 资源等待",
+              "path": "src/cpu/o3/lsq_unit.cc:1642",
+              "type": "stall",
+              "text": "本次 Load 需要等待 RAR 检查资源，按程序顺序记录。"
+            },
+            {
+              "a": "replay",
+              "b": "iew",
+              "label": "retryMem",
+              "path": "src/cpu/o3/lsq_unit.cc:4159",
+              "type": "replay",
+              "text": "可再次执行时清除重放标记，通知所属发射队列。"
+            },
+            {
+              "a": "iew",
+              "b": "lq",
+              "label": "Load 执行",
+              "path": "src/cpu/o3/lsq_unit.cc:3444",
+              "type": "request",
+              "text": "执行已分配 LQ 项的普通标量 Load。"
+            }
+          ]
+        },
+        {
+          "name": "已提交 Store 写入",
+          "path": "src/cpu/o3/lsq_unit.cc:2251",
+          "steps": [
+            {
+              "a": "commit",
+              "b": "sq",
+              "label": "提交授权",
+              "path": "src/cpu/o3/lsq_unit.cc:2251",
+              "type": "request",
+              "text": "允许不晚于提交边界的 Store 继续。"
+            },
+            {
+              "a": "sq",
+              "b": "sb",
+              "label": "缓冲写入",
+              "path": "src/cpu/o3/lsq_unit.cc:2567",
+              "type": "request",
+              "text": "普通可缓存 Store 进入 SBuffer。"
+            },
+            {
+              "a": "sb",
+              "b": "dcache",
+              "label": "写数据",
+              "path": "src/cpu/o3/lsq.cc:4216",
+              "type": "request",
+              "text": "选中待逐出项后向缓存发送写请求。"
+            }
+          ]
+        }
+      ],
+      "id": "lsu"
+    },
+    "dcache": {
+      "title": "L1 D-Cache",
+      "rtl": "https://docs.xiangshan.cc/projects/design/zh-cn/kunminghu-v3/memblock/DCache/",
+      "mapping": "LoadPipe 查询标签，MissQueue 跟踪缺失，MainPipe 处理重填。对应模型中的 BaseCache、MSHR 和 handleFill。",
+      "nodes": [
+        {
+          "id": "lsu",
+          "title": "LSU / LSQ",
+          "sub": "数据请求端",
+          "path": "src/cpu/o3/lsq_unit.cc:3163",
+          "detail": "LSQ 使用 dcachePort 发送已获准执行的读写包。",
+          "role": "up",
+          "target": "lsu"
+        },
+        {
+          "id": "tags",
+          "title": "Tag / Data",
+          "sub": "标签与数据阵列",
+          "path": "src/mem/cache/base.cc:709",
+          "detail": "检查块是否有效及读写权限，命中后以对应数据满足请求。",
+          "role": "internal"
+        },
+        {
+          "id": "miss",
+          "title": "MSHR",
+          "sub": "缺失状态记录",
+          "path": "src/mem/cache/base.cc:516",
+          "detail": "保存未完成的块请求及等待目标；相容的同块访问可以合并。",
+          "role": "internal"
+        },
+        {
+          "id": "l2",
+          "title": "L2",
+          "sub": "经每核 tol2bus",
+          "path": "configs/common/CacheConfig.py:199",
+          "detail": "L1 的内存侧端口经 L1ToL2Bus 到达 L2 wrapper。",
+          "role": "down",
+          "target": "l2"
+        }
+      ],
+      "edges": [
+        {
+          "a": "lsu",
+          "b": "tags",
+          "label": "读写请求",
+          "path": "src/cpu/o3/lsq_unit.cc:3163"
+        },
+        {
+          "a": "tags",
+          "b": "miss",
+          "label": "缺失分配 / 合并",
+          "path": "src/mem/cache/base.cc:516"
+        },
+        {
+          "a": "miss",
+          "b": "l2",
+          "label": "读块请求",
+          "path": "src/mem/cache/base.cc:2806"
+        }
+      ],
+      "streams": [
+        {
+          "name": "读缺失与缓存行回填",
+          "path": "src/mem/cache/base.cc:1142",
+          "steps": [
+            {
+              "a": "lsu",
+              "b": "tags",
+              "type": "request",
+              "text": "上游提交可缓存的物理地址读请求。"
+            },
+            {
+              "a": "tags",
+              "b": "miss",
+              "type": "miss",
+              "text": "块未命中，分配该行的 MSHR。"
+            },
+            {
+              "a": "miss",
+              "b": "l2",
+              "type": "request",
+              "text": "MSHR 向下一级发出缓存行读取。"
+            },
+            {
+              "a": "l2",
+              "b": "miss",
+              "type": "response",
+              "text": "下游返回缓存行数据，匹配在途记录。"
+            },
+            {
+              "a": "miss",
+              "b": "tags",
+              "type": "refill",
+              "text": "从响应找到 MSHR，将返回的缓存行安装到缓存块。"
+            },
+            {
+              "a": "tags",
+              "b": "lsu",
+              "type": "response",
+              "text": "完成等待目标，将读响应返回上游。"
+            }
+          ]
+        },
+        {
+          "name": "一级读命中",
+          "path": "src/mem/cache/base.cc:709",
+          "steps": [
+            {
+              "a": "lsu",
+              "b": "tags",
+              "type": "request",
+              "text": "LSQ 请求行内数据。"
+            },
+            {
+              "a": "tags",
+              "b": "lsu",
+              "type": "hit",
+              "text": "命中且权限满足，安排返回读数据。"
+            }
+          ]
+        }
+      ],
+      "id": "dcache"
+    },
+    "l2": {
+      "title": "L2 Cache",
+      "rtl": "https://docs.xiangshan.cc/projects/design/zh-cn/kunminghu-v3/cache/l2cache/CoupledL2/",
+      "mapping": "CoupledL2 对照 XS-GEM5 的 wrapper、切片流水线、inner_cache 和内部交叉开关。",
+      "nodes": [
+        {
+          "id": "dcache",
+          "title": "D-Cache",
+          "sub": "L1 数据侧",
+          "path": "configs/common/CacheConfig.py:199",
+          "detail": "L1 数据缺失请求经 tol2bus 到达 L2。",
+          "role": "up",
+          "target": "dcache"
+        },
+        {
+          "id": "icache",
+          "title": "I-Cache",
+          "sub": "L1 指令侧",
+          "path": "configs/common/CacheConfig.py:382",
+          "detail": "取指缓存缺失使用同一 L1–L2 总线。",
+          "role": "up",
+          "target": "icache"
+        },
+        {
+          "id": "mmu",
+          "title": "MMU / PTW",
+          "sub": "页表读取",
+          "path": "configs/common/CacheConfig.py:382",
+          "detail": "ITB 和 DTB 的 walker 通过缓存端口发出 PTE 访问。",
+          "role": "up",
+          "target": "mmu"
+        },
+        {
+          "id": "route",
+          "title": "L2 Wrapper",
+          "sub": "地址选择切片",
+          "path": "src/mem/cache/xs_l2/L2CacheWrapper.cc:153",
+          "detail": "CPU 侧接收请求，用 getSliceId 按地址路由。",
+          "role": "internal"
+        },
+        {
+          "id": "pipe",
+          "title": "L2 Slice",
+          "sub": "仲裁与流水线",
+          "path": "src/mem/cache/xs_l2/L2CacheSlice.cc:165",
+          "detail": "切片接收请求，处理缓冲、端口占用和 MainPipe。",
+          "role": "internal"
+        },
+        {
+          "id": "inner",
+          "title": "Inner Cache",
+          "sub": "切片内缓存",
+          "path": "configs/common/CacheConfig.py:159",
+          "detail": "每片拥有独立的缓存存储和 MSHR 资源。",
+          "role": "internal"
+        },
+        {
+          "id": "llc",
+          "title": "L3 / LLC",
+          "sub": "经内外两级 xbar",
+          "path": "configs/common/CacheConfig.py:291",
+          "detail": "切片的 mem_side 连接 wrapper.xbar，再由 tol3bus 接到共享 L3。",
+          "role": "down",
+          "target": "llc"
+        }
+      ],
+      "edges": [
+        {
+          "a": "dcache",
+          "b": "route",
+          "label": "tol2bus",
+          "path": "configs/common/CacheConfig.py:199"
+        },
+        {
+          "a": "icache",
+          "b": "route",
+          "label": "tol2bus",
+          "path": "configs/common/CacheConfig.py:199"
+        },
+        {
+          "a": "mmu",
+          "b": "route",
+          "label": "tol2bus",
+          "path": "configs/common/CacheConfig.py:199"
+        },
+        {
+          "a": "route",
+          "b": "pipe",
+          "label": "切片选择",
+          "path": "src/mem/cache/xs_l2/L2CacheWrapper.cc:153"
+        },
+        {
+          "a": "pipe",
+          "b": "inner",
+          "label": "inner_cpu_port",
+          "path": "configs/common/CacheConfig.py:191"
+        },
+        {
+          "a": "inner",
+          "b": "llc",
+          "label": "缺失下发",
+          "path": "configs/common/CacheConfig.py:291"
+        }
+      ],
+      "streams": [
+        {
+          "name": "L2 切片读缺失",
+          "path": "configs/common/CacheConfig.py:191",
+          "steps": [
+            {
+              "a": "dcache",
+              "b": "route",
+              "type": "request",
+              "text": "L1 数据侧请求物理缓存行。"
+            },
+            {
+              "a": "route",
+              "b": "pipe",
+              "type": "route",
+              "text": "按地址选择目标 slice。"
+            },
+            {
+              "a": "pipe",
+              "b": "inner",
+              "type": "lookup",
+              "text": "经切片仲裁查询内层缓存。"
+            },
+            {
+              "a": "inner",
+              "b": "llc",
+              "type": "miss",
+              "text": "内层分配 MSHR，经 xbar 和 tol3bus 请求 L3。"
+            },
+            {
+              "a": "llc",
+              "b": "inner",
+              "type": "refill",
+              "text": "下级响应返回切片，由 inner_cache 完成回填。"
+            },
+            {
+              "a": "inner",
+              "b": "pipe",
+              "type": "response",
+              "text": "响应目标经切片回程。"
+            },
+            {
+              "a": "pipe",
+              "b": "route",
+              "type": "response",
+              "text": "切片上送响应。"
+            },
+            {
+              "a": "route",
+              "b": "dcache",
+              "type": "response",
+              "text": "经 L1–L2 总线返回数据。"
+            }
+          ]
+        }
+      ],
+      "id": "l2"
+    },
+    "llc": {
+      "title": "L3 / LLC",
+      "rtl": "https://docs.xiangshan.cc/projects/design/zh-cn/kunminghu-v3/cache/l2cache/CoupledL2/",
+      "mapping": "共享 L3 接收 L2 下行请求并通过系统总线处理缺失。所引 RTL 章节描述 L2 的核外边界。",
+      "nodes": [
+        {
+          "id": "l2",
+          "title": "L2 Cache",
+          "sub": "经 tol3bus",
+          "path": "configs/common/CacheConfig.py:291",
+          "detail": "系统将各核 L2 的出口接到 tol3bus，归入共享 L3。",
+          "role": "up",
+          "target": "l2"
+        },
+        {
+          "id": "tags",
+          "title": "Tag / Data",
+          "sub": "标签与数据阵列",
+          "path": "src/mem/cache/base.cc:709",
+          "detail": "检查块是否有效及读写权限，命中后以对应数据满足请求。",
+          "role": "internal"
+        },
+        {
+          "id": "miss",
+          "title": "MSHR",
+          "sub": "缺失状态记录",
+          "path": "src/mem/cache/base.cc:516",
+          "detail": "保存未完成的块请求及等待目标；相容的同块访问可以合并。",
+          "role": "internal"
+        },
+        {
+          "id": "fabric",
+          "title": "System XBar",
+          "sub": "membus",
+          "path": "configs/common/CacheConfig.py:281",
+          "detail": "L3 的内存侧直接接入 membus 的 CPU 侧端口。",
+          "role": "down",
+          "target": "fabric"
+        }
+      ],
+      "edges": [
+        {
+          "a": "l2",
+          "b": "tags",
+          "label": "tol3bus",
+          "path": "configs/common/CacheConfig.py:280"
+        },
+        {
+          "a": "tags",
+          "b": "miss",
+          "label": "缺失分配 / 合并",
+          "path": "src/mem/cache/base.cc:516"
+        },
+        {
+          "a": "miss",
+          "b": "fabric",
+          "label": "下发物理读",
+          "path": "configs/common/CacheConfig.py:281"
+        }
+      ],
+      "streams": [
+        {
+          "name": "读缺失与缓存行回填",
+          "path": "src/mem/cache/base.cc:1142",
+          "steps": [
+            {
+              "a": "l2",
+              "b": "tags",
+              "type": "request",
+              "text": "上游提交可缓存的物理地址读请求。"
+            },
+            {
+              "a": "tags",
+              "b": "miss",
+              "type": "miss",
+              "text": "块未命中，分配该行的 MSHR。"
+            },
+            {
+              "a": "miss",
+              "b": "fabric",
+              "type": "request",
+              "text": "MSHR 向下一级发出缓存行读取。"
+            },
+            {
+              "a": "fabric",
+              "b": "miss",
+              "type": "response",
+              "text": "下游返回缓存行数据，匹配在途记录。"
+            },
+            {
+              "a": "miss",
+              "b": "tags",
+              "type": "refill",
+              "text": "从响应找到 MSHR，将返回的缓存行安装到缓存块。"
+            },
+            {
+              "a": "tags",
+              "b": "l2",
+              "type": "response",
+              "text": "完成等待目标，将读响应返回上游。"
+            }
+          ]
+        }
+      ],
+      "id": "llc"
+    },
+    "fabric": {
+      "title": "System XBar",
+      "rtl": "https://docs.xiangshan.cc/projects/design/zh-cn/kunminghu-v3/cache/l2cache/CoupledL2/",
+      "mapping": "RTL 系统互连对接一致性请求。此图聚焦 gem5 的 membus 地址路由及返回路径；图中消息单位为 timing packet。RTL 的 TileLink / CHI 通道在此层次以经典交叉开关的请求、探测与响应端口表示。",
+      "nodes": [
+        {
+          "id": "llc",
+          "title": "L3 / LLC",
+          "sub": "上游请求端",
+          "path": "configs/common/CacheConfig.py:281",
+          "detail": "普通缓存行缺失由 L3 的 mem_side 进入。",
+          "role": "up",
+          "target": "llc"
+        },
+        {
+          "id": "route",
+          "title": "Request Layer",
+          "sub": "地址解码 / 仲裁",
+          "path": "src/mem/coherent_xbar.cc:194",
+          "detail": "findPort 根据地址范围选择目标 mem-side port；请求层处理争用和重试。",
+          "role": "internal"
+        },
+        {
+          "id": "resp",
+          "title": "Response Layer",
+          "sub": "返回端口查找",
+          "path": "src/mem/coherent_xbar.cc:505",
+          "detail": "routeTo 使用原请求定位 CPU 侧目的端口，响应成功后删除路由记录。",
+          "role": "internal"
+        },
+        {
+          "id": "mem",
+          "title": "DRAMsim3",
+          "sub": "控制器端口",
+          "path": "configs/common/MemConfig.py:281",
+          "detail": "交叉开关的 mem_side_ports 连接 DRAMsim3 对象的 port。",
+          "role": "down",
+          "target": "mem"
+        }
+      ],
+      "edges": [
+        {
+          "a": "llc",
+          "b": "route",
+          "label": "读请求",
+          "path": "configs/common/CacheConfig.py:281"
+        },
+        {
+          "a": "route",
+          "b": "mem",
+          "label": "地址路由",
+          "path": "src/mem/coherent_xbar.cc:194"
+        },
+        {
+          "a": "mem",
+          "b": "resp",
+          "label": "读响应",
+          "path": "src/mem/coherent_xbar.cc:499"
+        },
+        {
+          "a": "resp",
+          "b": "llc",
+          "label": "返回请求方",
+          "path": "src/mem/coherent_xbar.cc:505"
+        }
+      ],
+      "streams": [
+        {
+          "name": "读事务的往返路由",
+          "path": "src/mem/coherent_xbar.cc:181",
+          "steps": [
+            {
+              "a": "llc",
+              "b": "route",
+              "type": "request",
+              "text": "LLC 发出内存读包。"
+            },
+            {
+              "a": "route",
+              "b": "mem",
+              "type": "route",
+              "text": "选择地址范围所属控制器，并记录响应目的端。"
+            },
+            {
+              "a": "mem",
+              "b": "resp",
+              "type": "response",
+              "text": "控制器返回带原请求的响应包。"
+            },
+            {
+              "a": "resp",
+              "b": "llc",
+              "type": "response",
+              "text": "根据 routeTo 查找并返回 LLC 端口。"
+            }
+          ]
+        }
+      ],
+      "id": "fabric"
+    },
+    "mem": {
+      "title": "Memory Controller",
+      "rtl": "https://docs.xiangshan.cc/projects/user-guide/zh-cn/kunminghu-v3/memory-model/",
+      "mapping": "DRAMsim3 接收 gem5 内存端口的请求，向时序后端排队，并在完成回调后发送读响应。",
+      "nodes": [
+        {
+          "id": "fabric",
+          "title": "System XBar",
+          "sub": "membus",
+          "path": "configs/common/MemConfig.py:281",
+          "detail": "内存控制器接收系统互连选中的物理地址事务。",
+          "role": "up",
+          "target": "fabric"
+        },
+        {
+          "id": "port",
+          "title": "MemoryPort",
+          "sub": "接收与流控",
+          "path": "src/mem/dramsim3.cc:191",
+          "detail": "结合未完成数和 wrapper.canAccept 检查容量；若队列已满则等待 retry。",
+          "role": "internal"
+        },
+        {
+          "id": "queue",
+          "title": "Outstanding Reads",
+          "sub": "按地址维护队列",
+          "path": "src/mem/dramsim3.cc:224",
+          "detail": "记录原始读包，增加在途计数，再将事务交给 DRAMsim3。",
+          "role": "internal"
+        },
+        {
+          "id": "backend",
+          "title": "DRAMsim3",
+          "sub": "DRAM 时序后端",
+          "path": "src/mem/dramsim3.cc:256",
+          "detail": "wrapper.enqueue 加入 DRAM 事务，tick 驱动后端。",
+          "role": "internal"
+        },
+        {
+          "id": "cb",
+          "title": "Read Complete",
+          "sub": "读取与响应队列",
+          "path": "src/mem/dramsim3.cc:312",
+          "detail": "回调按地址取出最早读包并调用 accessAndRespond；响应队列支持重试。",
+          "role": "internal"
+        }
+      ],
+      "edges": [
+        {
+          "a": "fabric",
+          "b": "port",
+          "label": "物理读包",
+          "path": "src/mem/dramsim3.cc:404"
+        },
+        {
+          "a": "port",
+          "b": "queue",
+          "label": "接纳请求",
+          "path": "src/mem/dramsim3.cc:224"
+        },
+        {
+          "a": "queue",
+          "b": "backend",
+          "label": "enqueue",
+          "path": "src/mem/dramsim3.cc:256"
+        },
+        {
+          "a": "backend",
+          "b": "cb",
+          "label": "读取完成回调",
+          "path": "src/mem/dramsim3.cc:312"
+        },
+        {
+          "a": "cb",
+          "b": "port",
+          "label": "排队发送响应",
+          "path": "src/mem/dramsim3.cc:105"
+        }
+      ],
+      "streams": [
+        {
+          "name": "DDR4 读事务与完成回调",
+          "path": "src/mem/dramsim3.cc:312",
+          "steps": [
+            {
+              "a": "fabric",
+              "b": "port",
+              "type": "request",
+              "text": "总线传入普通内存读。"
+            },
+            {
+              "a": "port",
+              "b": "queue",
+              "type": "accept",
+              "text": "后端可接纳，原始 Packet 加入同地址 FIFO。"
+            },
+            {
+              "a": "queue",
+              "b": "backend",
+              "type": "enqueue",
+              "text": "提交物理地址读事务。"
+            },
+            {
+              "a": "backend",
+              "b": "cb",
+              "type": "response",
+              "text": "时序后端完成该地址的读。"
+            },
+            {
+              "a": "cb",
+              "b": "port",
+              "type": "response",
+              "text": "取回原始 Packet，访问存储后安排响应。"
+            },
+            {
+              "a": "port",
+              "b": "fabric",
+              "type": "response",
+              "text": "向 membus 返回读数据。"
+            }
+          ]
+        }
+      ],
+      "id": "mem"
+    },
+    "mmu": {
+      "nodes": [
+        {
+          "id": "ifu",
+          "title": "IFU",
+          "sub": "取指请求 · Execute",
+          "x": 20,
+          "y": 65,
+          "path": "src/cpu/o3/fetch.cc:898",
+          "detail": "Fetch 从 FTQ 取得取指目标。构造取指 Request 后，Fetch 调用 mmu->translateTiming，注册 FetchTranslation 回调。",
+          "target": "ifu",
+          "role": "up"
+        },
+        {
+          "id": "lsq",
+          "title": "LSQ",
+          "sub": "访存请求 · Read / Write",
+          "x": 20,
+          "y": 345,
+          "path": "src/cpu/o3/lsq.cc:3917",
+          "detail": "LSQRequest 按访存模式提交翻译请求。跨界请求可以拆分，本例跟踪一个子请求。",
+          "target": "lsu",
+          "role": "up"
+        },
+        {
+          "id": "itb",
+          "title": "ITLB",
+          "sub": "指令 L1",
+          "x": 222,
+          "y": 65,
+          "path": "src/arch/riscv/RiscvTLB.py:74",
+          "detail": "指令侧 L1 TLB 处理 Execute 访问。",
+          "role": "internal"
+        },
+        {
+          "id": "dtb",
+          "title": "DTLB",
+          "sub": "数据 L1",
+          "x": 222,
+          "y": 345,
+          "path": "src/arch/riscv/RiscvTLB.py:74",
+          "detail": "Read/Write 访问选择 dtb。命中时检查权限并合成物理地址；未命中时查询共享二级 TLB。",
+          "role": "internal"
+        },
+        {
+          "id": "shared",
+          "title": "Shared L2 TLB",
+          "sub": "统一指令 / 数据翻译",
+          "x": 426,
+          "y": 205,
+          "path": "src/arch/riscv/RiscvMMU.py:51",
+          "detail": "itb 和 dtb 的 next_level 指向 l2_shared。L0 保存末级翻译，非叶项可缩短遍历，SP 保存大页。Sv39 跳过 L3。",
+          "role": "internal"
+        },
+        {
+          "id": "iwalk",
+          "title": "I-side PTW",
+          "sub": "itb.walker.port",
+          "x": 625,
+          "y": 65,
+          "path": "src/arch/riscv/pagetable_walker.cc:526",
+          "detail": "指令侧 walker 通过独立 RequestPort 发出物理 PTE 读，响应进入 WalkerPort::recvTimingResp。",
+          "role": "internal"
+        },
+        {
+          "id": "dwalk",
+          "title": "D-side PTW",
+          "sub": "dtb.walker.port",
+          "x": 625,
+          "y": 345,
+          "path": "src/arch/riscv/pagetable_walker.cc:454",
+          "detail": "数据侧 walker 经 dtb.walker.port 发出 PTE 请求并回填翻译。",
+          "role": "internal"
+        },
+        {
+          "id": "pte",
+          "title": "PTE memory",
+          "sub": "页表缓存 / 内存层次",
+          "x": 823,
+          "y": 205,
+          "path": "configs/common/CacheConfig.py:235",
+          "detail": "walker 通过各自的页表缓存访问物理内存层次。读响应可在缓存命中后返回。",
+          "target": "l2",
+          "role": "down"
+        }
+      ],
+      "edges": [
+        {
+          "a": "ifu",
+          "b": "itb",
+          "label": "Execute",
+          "path": "src/cpu/o3/fetch.cc:898"
+        },
+        {
+          "a": "itb",
+          "b": "ifu",
+          "label": "finish",
+          "path": "src/arch/riscv/tlb.cc:2899"
+        },
+        {
+          "a": "lsq",
+          "b": "dtb",
+          "label": "Read / Write",
+          "path": "src/cpu/o3/lsq.cc:3917"
+        },
+        {
+          "a": "dtb",
+          "b": "lsq",
+          "label": "finish",
+          "path": "src/arch/riscv/tlb.cc:2899"
+        },
+        {
+          "a": "itb",
+          "b": "shared",
+          "label": "lookup",
+          "path": "src/arch/riscv/tlb.cc:2460"
+        },
+        {
+          "a": "dtb",
+          "b": "shared",
+          "label": "lookup",
+          "path": "src/arch/riscv/tlb.cc:2460"
+        },
+        {
+          "a": "shared",
+          "b": "dwalk",
+          "label": "miss / schedule",
+          "path": "src/arch/riscv/tlb.cc:2607"
+        },
+        {
+          "a": "shared",
+          "b": "iwalk",
+          "label": "miss / schedule",
+          "path": "src/arch/riscv/tlb.cc:2607"
+        },
+        {
+          "a": "dwalk",
+          "b": "pte",
+          "label": "PTE read",
+          "path": "src/arch/riscv/pagetable_walker.cc:526"
+        },
+        {
+          "a": "pte",
+          "b": "dwalk",
+          "label": "PTE data",
+          "path": "src/arch/riscv/pagetable_walker.cc:454"
+        },
+        {
+          "a": "iwalk",
+          "b": "pte",
+          "label": "PTE read",
+          "path": "src/arch/riscv/pagetable_walker.cc:526"
+        },
+        {
+          "a": "pte",
+          "b": "iwalk",
+          "label": "PTE data",
+          "path": "src/arch/riscv/pagetable_walker.cc:454"
+        },
+        {
+          "a": "dwalk",
+          "b": "dtb",
+          "label": "refill",
+          "path": "src/arch/riscv/pagetable_walker.cc:1734"
+        },
+        {
+          "a": "dwalk",
+          "b": "lsq",
+          "label": "finish",
+          "path": "src/arch/riscv/pagetable_walker.cc:2407"
+        },
+        {
+          "a": "iwalk",
+          "b": "itb",
+          "label": "refill",
+          "path": "src/arch/riscv/pagetable_walker.cc:1734"
+        },
+        {
+          "a": "iwalk",
+          "b": "ifu",
+          "label": "finish",
+          "path": "src/arch/riscv/pagetable_walker.cc:2407"
+        }
+      ],
+      "streams": [
+        {
+          "name": "数据侧 · Sv39 页表遍历",
+          "steps": [
+            {
+              "a": "lsq",
+              "b": "dtb",
+              "type": "request",
+              "text": "Load 请求通过 translateTiming 提交虚拟地址。"
+            },
+            {
+              "a": "dtb",
+              "b": "shared",
+              "type": "miss",
+              "text": "DTLB 未命中，查询共享 L2 的页表项。"
+            },
+            {
+              "a": "shared",
+              "b": "dwalk",
+              "type": "miss",
+              "text": "共享 L2 未命中；DTLB 调用自身 walker->start，从根页表开始。"
+            },
+            {
+              "a": "dwalk",
+              "b": "pte",
+              "type": "request",
+              "text": "通过 dtb.walker.port 读取 L2 的 PTE。"
+            },
+            {
+              "a": "pte",
+              "b": "dwalk",
+              "type": "response",
+              "text": "返回非叶 PTE，使用 PPN 定位下一级页表。"
+            },
+            {
+              "a": "dwalk",
+              "b": "pte",
+              "type": "request",
+              "text": "通过 dtb.walker.port 读取 L1 的 PTE。"
+            },
+            {
+              "a": "pte",
+              "b": "dwalk",
+              "type": "response",
+              "text": "返回非叶 PTE，使用 PPN 定位下一级页表。"
+            },
+            {
+              "a": "dwalk",
+              "b": "pte",
+              "type": "request",
+              "text": "通过 dtb.walker.port 读取 L0 的 PTE。"
+            },
+            {
+              "a": "pte",
+              "b": "dwalk",
+              "type": "response",
+              "text": "返回有效的 4 KiB 叶 PTE，进行权限检查。"
+            },
+            {
+              "a": "dwalk",
+              "b": "dtb",
+              "type": "refill",
+              "text": "walker 插入叶翻译，供同页后续访问使用。"
+            },
+            {
+              "a": "dwalk",
+              "b": "lsq",
+              "type": "response",
+              "text": "walker 设置物理地址，调用原请求的 translation->finish。"
+            }
+          ],
+          "path": "src/arch/riscv/pagetable_walker.cc:526"
+        },
+        {
+          "name": "虚拟化 · VS + G 两阶段翻译",
+          "steps": [
+            {
+              "a": "lsq",
+              "b": "dtb",
+              "type": "request",
+              "text": "虚拟机加载 GVA。示例采用 VS Sv39 与 G Sv39x4，页表均使用对齐的根级大页叶项，权限检查通过。"
+            },
+            {
+              "a": "dtb",
+              "b": "shared",
+              "type": "miss",
+              "text": "DTLB 未命中，查询共享二级翻译缓存。"
+            },
+            {
+              "a": "shared",
+              "b": "dwalk",
+              "type": "miss",
+              "text": "本例没有可复用的翻译。walker 读取 vsatp 和 hgatp，开始嵌套遍历。"
+            },
+            {
+              "a": "dwalk",
+              "b": "pte",
+              "type": "G · 请求",
+              "text": "由 vsatp 根和 GVA 索引算出 VS PTE 的 GPA。先从 hgatp 根读取对应的 G 级 PTE。"
+            },
+            {
+              "a": "pte",
+              "b": "dwalk",
+              "type": "G · 响应",
+              "text": "G 级叶项给出 VS PTE 所在的系统物理地址。"
+            },
+            {
+              "a": "dwalk",
+              "b": "pte",
+              "type": "VS · 请求",
+              "text": "使用刚得到的系统物理地址读取 VS 页表项。"
+            },
+            {
+              "a": "pte",
+              "b": "dwalk",
+              "type": "VS · 响应",
+              "text": "VS 叶项通过检查。walker 结合 GVA 页内偏移，得到加载目标的 GPA。"
+            },
+            {
+              "a": "dwalk",
+              "b": "pte",
+              "type": "G · 请求",
+              "text": "对目标 GPA 再次执行 G 阶段翻译。本例目标与页表位于不同的大页，读取目标对应的 G 级 PTE。"
+            },
+            {
+              "a": "pte",
+              "b": "dwalk",
+              "type": "G · 响应",
+              "text": "G 叶项通过检查，得到加载目标的系统物理地址。"
+            },
+            {
+              "a": "dwalk",
+              "b": "dtb",
+              "type": "refill",
+              "text": "将组合翻译回填至 DTLB。"
+            },
+            {
+              "a": "dwalk",
+              "b": "lsq",
+              "type": "response",
+              "text": "通过 finish 回调向 LSQ 返回翻译后的请求。"
+            }
+          ],
+          "path": "src/arch/riscv/pagetable_walker.cc:914"
+        },
+        {
+          "name": "指令侧 · ITLB 命中",
+          "steps": [
+            {
+              "a": "ifu",
+              "b": "itb",
+              "type": "request",
+              "text": "Fetch 发起 Execute 翻译。"
+            },
+            {
+              "a": "itb",
+              "b": "ifu",
+              "type": "hit",
+              "text": "ITLB 命中且执行权限通过。finish 回调将物理地址交回 Fetch。"
+            }
+          ],
+          "path": "src/arch/riscv/tlb.cc:2899"
+        },
+        {
+          "name": "指令侧 · L2 TLB 命中",
+          "steps": [
+            {
+              "a": "ifu",
+              "b": "itb",
+              "type": "request",
+              "text": "Fetch 请求指令地址翻译。"
+            },
+            {
+              "a": "itb",
+              "b": "shared",
+              "type": "miss",
+              "text": "ITLB 未命中，查询共享 L2。"
+            },
+            {
+              "a": "shared",
+              "b": "iwalk",
+              "type": "hit",
+              "text": "L0 叶项命中。TLB 调用 doL2TLBHitSchedule 安排延迟完成。"
+            },
+            {
+              "a": "iwalk",
+              "b": "itb",
+              "type": "refill",
+              "text": "回填开启时，将翻译结果插入一级 TLB。"
+            },
+            {
+              "a": "iwalk",
+              "b": "ifu",
+              "type": "response",
+              "text": "延迟事件调用 FetchTranslation 的 finish 回调。"
+            }
+          ],
+          "path": "src/arch/riscv/tlb.cc:1912"
+        }
+      ],
+      "title": "MMU",
+      "rtl": "https://docs.xiangshan.cc/projects/design/zh-cn/kunminghu-v3/memblock/MMU/",
+      "mapping": "RTL 文档区分 Repeater、PTW、LLPTW 和 HPTW。模型由两侧 L1 TLB、共享 L2 TLB 和各自的 walker 承担查找、遍历与回调。虚拟化路径由 walker 的两阶段状态处理。",
+      "id": "mmu"
+    }
+  }
+}

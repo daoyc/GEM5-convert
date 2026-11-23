@@ -1,0 +1,18 @@
+{
+  "name": "并行端口读请求",
+  "viewId": "xiangshan.overview",
+  "steps": [
+    {
+      "edgeId": "port:[\"system.cpu.icache\",\"out\",0,\"system.l2\",\"in\",1]",
+      "tick": "9007199254740993",
+      "type": "request",
+      "text": "读取向量端口 0"
+    },
+    {
+      "edgeId": "port:[\"system.cpu.icache\",\"out\",1,\"system.l2\",\"in\",0]",
+      "tick": "9007199254740993",
+      "type": "request",
+      "text": "读取向量端口 1"
+    }
+  ]
+}

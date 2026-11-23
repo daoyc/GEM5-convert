@@ -1,0 +1,12 @@
+{
+  "type": "System", "path": "system",
+  "cpu": {
+    "type": "RiscvO3CPU", "path": "system.cpu",
+    "mmu": {"type":"RiscvMMU","path":"system.cpu.mmu"},
+    "branchPred": {"type":"DecoupledBPUWithBTB","path":"system.cpu.branchPred"},
+    "icache": {"type":"Cache","path":"system.cpu.icache","size":32768,
+      "out": {"is_source":"True","peer":["system.l2.in[1]","system.l2.in[0]"]}}
+  },
+  "l2": {"type":"Cache","path":"system.l2","size":1048576,
+    "in":{"is_source":"False","peer":["system.cpu.icache.out[1]","system.cpu.icache.out[0]"]}}
+}

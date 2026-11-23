@@ -1,0 +1,12 @@
+{
+  "name": "旧格式并行端口歧义",
+  "viewId": "xiangshan.overview",
+  "steps": [
+    {
+      "a": "system.cpu.icache",
+      "b": "system.l2",
+      "type": "request",
+      "text": "未指定端口"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Core Atlas · 模型浏览</title><link rel="stylesheet" href="models.css"><link rel="stylesheet" href="viewer.css"></head>
+<body>
+<header class="topbar"><div class="masthead"><b class="wordmark"><span aria-hidden="true">◈</span>Core Atlas</b><nav aria-label="模型导航"><button id="home">架构总览</button><select id="view" aria-label="视图"></select></nav>
+<div class="imports"><label>导入模型<input id="file" type="file" accept=".json"></label><label>导入运行配置<input id="config" type="file" accept=".json"></label></div></div></header>
+<main>
+<div class="heading"><div><label class="model-label">GEM5　/　<select id="model" aria-label="当前模型"></select></label><h1 id="title">模型浏览</h1></div><select id="configuration" aria-label="配置来源" hidden></select><select id="scope" aria-label="系统或 CPU 实例" hidden></select></div>
+<p id="message" role="status"></p>
+<section class="board" aria-label="架构画布">
+<div class="toolbar"><div class="stream-picker"><b>STREAM</b><select id="scenario" aria-label="回放场景"></select><small id="scene"></small></div>
+<div class="run-controls"><button id="play" disabled>播放</button><button id="step" disabled>单步 →</button></div></div>
+<div class="canvas" tabindex="0" aria-label="可滚动的拓扑画布"><svg id="map" aria-label="架构拓扑"></svg></div>
+<div class="board-footer"><div class="readout"><span id="relationKey" hidden><b>上游</b> → 当前模块 → <b>下游</b></span><span id="event" aria-live="polite"></span></div>
+<div class="zoom"><button id="minus" aria-label="缩小">−</button><output id="zoomValue">100%</output><button id="plus" aria-label="放大">＋</button></div></div>
+<div class="dock" hidden><button id="prev">上一页</button><span id="page"></span><button id="nextPage">下一页</button></div>
+</section>
+<details id="coveragePanel" hidden><summary>结构覆盖与模型对照 <small id="coverageCount"></small></summary>
+<div class="coverage-tools"><label>覆盖状态 <select id="coverageFilter"><option value="">全部</option><option>已映射</option><option>合并</option><option>条件启用</option><option>未知</option><option>缺失</option></select></label>
+<label>载入对照模型 <input id="compareFile" type="file" accept=".html,.json"></label>
+<label id="onlyDiffLabel" hidden><input id="onlyDifferences" type="checkbox" checked> 只看差异</label><button id="removeComparison" hidden>关闭对照</button></div>
+<div class="coverage-scroll"><table><thead><tr id="coverageHead"></tr></thead><tbody id="coverageRows"></tbody></table></div></details>
+<div class="lower"><article class="replay"><div class="section-head"><h2>事件序列</h2><label class="upload">↑ 导入 trace<input id="trace" type="file" accept=".json"></label></div><ol id="sequence" aria-label="事件序列"></ol></article>
+<article><div class="section-head"><h2>实现检查器</h2><small id="counts"></small></div><div id="props"></div>
+<div class="source-search"><label for="search">源码与实例</label><div><input id="search" type="search" placeholder="搜索名称或路径"><select id="object" aria-label="对象"></select></div></div></article></div>
+</main>
+<dialog id="architecturePage" aria-label="昆明湖整核视图"><iframe title="生成的架构视图"></iframe><button id="closeArchitecture">返回模型浏览</button></dialog><!--model--><script src="models.js"></script><script src="coverage.js"></script><script src="atlas.js"></script></body></html>
